@@ -1,6 +1,7 @@
 import 'package:em_store/utils/colors.dart';
+import 'package:em_store/widgets/head_text.dart';
+import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class MainHomePage extends StatefulWidget {
   const MainHomePage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _MainHomePageState extends State<MainHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(body: Column(children: [
       Container(
-        margin: const EdgeInsets.only(top: 45, bottom: 15),
+        margin: const EdgeInsets.only(top: 50, bottom: 15),
         padding: const EdgeInsets.only(left: 20, right: 20),
 
         child: Row(
@@ -22,8 +23,13 @@ class _MainHomePageState extends State<MainHomePage> {
           children: [
             Column(
               children: [
-                Text("Egypt"),
-                Text("Monoufia")
+                HeadLineText(text: 'Egypt', textColor: AppColors.mainColor, textSize: 25,),
+                Row(
+                  children: [
+                    SmallBodyText(text: 'Monomania', textColor: AppColors.textColor,),
+                    const Icon(Icons.arrow_drop_down_rounded, color: AppColors.textColor,)
+                  ],
+                )
               ],
             ),
             Center(
