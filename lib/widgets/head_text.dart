@@ -4,12 +4,14 @@ class HeadLineText extends StatelessWidget {
   Color textColor;
   final String text;
   double textSize;
+  FontWeight textWeight;
   TextOverflow textOverflow;
   HeadLineText(
       {Key? key,
       this.textColor = Colors.black54,
       required this.text,
       this.textSize = 20,
+      this.textWeight = FontWeight.w500,
       this.textOverflow = TextOverflow.ellipsis})
       : super(key: key);
 
@@ -22,7 +24,7 @@ class HeadLineText extends StatelessWidget {
       style: TextStyle(
           color: textColor,
           fontSize: textSize,
-          fontWeight: FontWeight.w500,
+          fontWeight: textWeight,
           fontFamily: 'Montserrat'),
     );
   }

@@ -1,6 +1,5 @@
+import 'package:em_store/views/home/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'home/main_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: const MainHomePage()
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const SplashScreen());
   }
 }
