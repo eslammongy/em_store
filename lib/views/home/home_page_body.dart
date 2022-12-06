@@ -70,9 +70,22 @@ class _HomePageBodyState extends State<HomePageBody> {
               height: 140,
               margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.white,
-              ),
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color(0xFFe8e8e8),
+                        offset: Offset(0, 5),
+                        blurRadius: 5.0),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-5, 0),
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(5, 0),
+                    )
+                  ]),
               child: Container(
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Column(
