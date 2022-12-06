@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/views/home/main_home_page.dart';
@@ -14,7 +13,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-/*   late Timer timer;
+  late Timer timer;
   @override
   void initState() {
     super.initState();
@@ -23,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
           MaterialPageRoute(builder: (context) => const MainHomePage()));
       timer.cancel();
     });
-  } */
+  }
 
   @override
   Widget build(BuildContext context) {
