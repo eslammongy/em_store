@@ -11,7 +11,7 @@ class SmallBodyText extends StatelessWidget {
       {Key? key,
       this.textColor = Colors.black26,
       required this.text,
-      this.textSize = 15,
+      this.textSize = 14,
       this.lineHeight = 1.2,
       this.textOverflow = TextOverflow.ellipsis})
       : super(key: key);
@@ -25,7 +25,7 @@ class SmallBodyText extends StatelessWidget {
           color: textColor,
           fontSize: textSize,
           height: lineHeight,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w400,
           fontFamily: 'Montserrat'),
     );
   }

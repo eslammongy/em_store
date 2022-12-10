@@ -1,4 +1,5 @@
 import 'package:em_store/utils/colors.dart';
+import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/views/home/home_page_body.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/small_body_text.dart';
@@ -18,8 +19,10 @@ class _MainHomePageState extends State<MainHomePage> {
         body: Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 50, bottom: 15),
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          margin: EdgeInsets.only(
+              top: Dimensions.spaceHeight50, bottom: Dimensions.spaceHeight15),
+          padding: EdgeInsets.only(
+              left: Dimensions.spaceWidth20, right: Dimensions.spaceWidth20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -46,14 +49,16 @@ class _MainHomePageState extends State<MainHomePage> {
               ),
               Center(
                 child: Container(
-                  width: 50,
-                  height: 50,
+                  width: Dimensions.spaceHeight50,
+                  height: Dimensions.spaceHeight50,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius:
+                        BorderRadius.circular(Dimensions.cardRadius15),
                     color: AppColors.mainColor,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.search,
+                    size: Dimensions.iconsSize,
                     color: Colors.white,
                   ),
                 ),

@@ -1,5 +1,7 @@
+import 'package:em_store/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HeadLineText extends StatelessWidget {
   Color textColor;
   final String text;
@@ -10,8 +12,8 @@ class HeadLineText extends StatelessWidget {
       {Key? key,
       this.textColor = Colors.black54,
       required this.text,
-      this.textSize = 20,
-      this.textWeight = FontWeight.w500,
+      this.textSize = 0.0,
+      this.textWeight = FontWeight.w600,
       this.textOverflow = TextOverflow.ellipsis})
       : super(key: key);
 
@@ -23,7 +25,7 @@ class HeadLineText extends StatelessWidget {
       overflow: textOverflow,
       style: TextStyle(
           color: textColor,
-          fontSize: textSize,
+          fontSize: textSize == 0 ? Dimensions.headFontSize : textSize,
           fontWeight: textWeight,
           fontFamily: 'Montserrat'),
     );

@@ -1,4 +1,6 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:em_store/utils/colors.dart';
+import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/icon_and_icon_widget.dart';
 import 'package:em_store/widgets/small_body_text.dart';
@@ -15,7 +17,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currentPageValue = 0.0;
   final double _scaleFactor = 0.8;
-  final _cardHeight = 220;
+  final _cardHeight = Dimensions.pageViewContainer;
 
   @override
   void initState() {
@@ -38,27 +40,43 @@ class _HomePageBodyState extends State<HomePageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 320,
-      child: PageView.builder(
-          controller: pageController,
-          itemCount: 5,
-          itemBuilder: (context, position) {
-            return _buildPageItem(position);
-          }),
+    return Column(
+      children: [
+        SizedBox(
+          height: Dimensions.pageView,
+          child: PageView.builder(
+              controller: pageController,
+              itemCount: 5,
+              itemBuilder: (context, position) {
+                return _buildPageItem(position);
+              }),
+        ),
+        DotsIndicator(
+            dotsCount: 5,
+            position: _currentPageValue,
+            decorator: DotsDecorator(
+              activeColor: AppColors.mainColor,
+              size: const Size.square(9.0),
+              activeSize: const Size(18.0, 9.0),
+              activeShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0)),
+            )),
+      ],
     );
   }
 
+// creating slider container
   Widget _buildPageItem(int position) {
     return Transform(
       transform: createMatrixTransform(position),
       child: Stack(
         children: [
           Container(
-            height: 220,
-            margin: const EdgeInsets.only(left: 10, right: 10),
+            height: Dimensions.pageViewContainer,
+            margin: EdgeInsets.only(
+                left: Dimensions.spaceWidth10, right: Dimensions.spaceWidth10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(Dimensions.cardRadius30),
                 /*  color: position.isEven ? Colors.amber[900] : Colors.purple[300], */
                 image: const DecorationImage(
                     fit: BoxFit.cover,
@@ -67,10 +85,13 @@ class _HomePageBodyState extends State<HomePageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 140,
-              margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+              height: Dimensions.pageViewTextContainer,
+              margin: EdgeInsets.only(
+                  left: Dimensions.spaceWidth30,
+                  right: Dimensions.spaceWidth30,
+                  bottom: Dimensions.spaceWidth10),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
                   color: Colors.white,
                   boxShadow: const [
                     BoxShadow(
@@ -95,8 +116,8 @@ class _HomePageBodyState extends State<HomePageBody> {
                         height: 15,
                       ),
                       HeadLineText(text: "Sample Head Text"),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: Dimensions.spaceHeight10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -120,8 +141,8 @@ class _HomePageBodyState extends State<HomePageBody> {
                           SmallBodyText(text: '128 Comments')
                         ],
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: Dimensions.spaceHeight20,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
