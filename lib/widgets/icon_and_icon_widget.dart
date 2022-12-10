@@ -23,11 +23,11 @@ class IconAndTextWidget extends StatelessWidget {
           size: Dimensions.iconsSize,
         ),
         const SizedBox(
-          width: 5,
+          width: 2,
         ),
         SmallBodyText(text: text),
         const SizedBox(
-          width: 10,
+          width: 5,
         ),
       ],
     );

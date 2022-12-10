@@ -66,7 +66,9 @@ class _MainHomePageState extends State<MainHomePage> {
             ],
           ),
         ),
-        const HomePageBody()
+        const Expanded(
+            child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(), child: HomePageBody()))
       ],
     ));
   }

@@ -3,6 +3,7 @@ import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/icon_and_icon_widget.dart';
+import 'package:em_store/widgets/list_product_layout.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // top slider section
         SizedBox(
           height: Dimensions.pageView,
           child: PageView.builder(
@@ -61,6 +63,37 @@ class _HomePageBodyState extends State<HomePageBody> {
               activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0)),
             )),
+        // popular items section
+        SizedBox(
+          height: Dimensions.spaceHeight30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.spaceWidth30),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+            HeadLineText(text: "Popular"),
+            SizedBox(
+              width: Dimensions.spaceWidth10,
+            ),
+            HeadLineText(
+              text: ".",
+              textColor: AppColors.mainBlackColor,
+            ),
+            SizedBox(
+              width: Dimensions.spaceWidth10,
+            ),
+            SmallBodyText(text: 'popular products here..')
+          ]),
+        ),
+        // list of products here
+        // ignore: sized_box_for_whitespace
+        ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              // build list layout item view
+              return const ProductListLayout();
+            }),
       ],
     );
   }
@@ -145,22 +178,21 @@ class _HomePageBodyState extends State<HomePageBody> {
                         height: Dimensions.spaceHeight20,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          IconAndTextWidget(
-                              icon: Icons.circle,
-                              color: AppColors.mainColor,
-                              text: 'normal'),
-                          IconAndTextWidget(
-                              icon: Icons.location_on,
-                              color: Colors.green,
-                              text: '36.6 km'),
-                          IconAndTextWidget(
-                              icon: Icons.alarm_rounded,
-                              color: AppColors.mainColor,
-                              text: '24 min'),
-                        ],
-                      )
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: const [
+                            IconAndTextWidget(
+                                icon: Icons.circle,
+                                color: AppColors.mainColor,
+                                text: 'normal'),
+                            IconAndTextWidget(
+                                icon: Icons.location_on,
+                                color: Colors.green,
+                                text: '36.6km'),
+                            IconAndTextWidget(
+                                icon: Icons.alarm_rounded,
+                                color: AppColors.mainColor,
+                                text: '24min'),
+                          ])
                     ]),
               ),
             ),

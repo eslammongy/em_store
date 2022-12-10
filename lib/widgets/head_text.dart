@@ -13,7 +13,7 @@ class HeadLineText extends StatelessWidget {
       this.textColor = Colors.black54,
       required this.text,
       this.textSize = 0.0,
-      this.textWeight = FontWeight.w600,
+      this.textWeight = FontWeight.w500,
       this.textOverflow = TextOverflow.ellipsis})
       : super(key: key);
 

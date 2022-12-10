@@ -25,5 +25,8 @@ class Dimensions {
   // dynamic font size
   static double headFontSize = screenHeight / 42.2;
   // dynamic icon size
-  static double iconsSize = screenHeight / 35.17;
+  static double iconsSize = screenHeight / 40.17;
+  // list view layout
+  static double listViewImgSize = screenWidth / 3.25;
+  static double listViewTxtContainerSize = screenWidth / 3.9;
 }
