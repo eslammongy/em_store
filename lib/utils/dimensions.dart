@@ -33,4 +33,6 @@ class Dimensions {
   static double listViewTxtContainerSize = screenWidth / 3.9;
 
   static double popularProductImgBg = screenHeight / 2.41;
+
+  static double bottomBarHeight = screenHeight / 7.03;
 }
