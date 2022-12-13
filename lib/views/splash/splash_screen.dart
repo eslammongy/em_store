@@ -5,6 +5,8 @@ import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 
+import '../popular_items/popular_items.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -19,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 2), (timer) {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const MainHomePage()));
+          MaterialPageRoute(builder: (context) => const PopularProductsDetail()));
       timer.cancel();
     });
   }

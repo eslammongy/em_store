@@ -26,7 +26,10 @@ class Dimensions {
   static double headFontSize = screenHeight / 42.2;
   // dynamic icon size
   static double iconsSize = screenHeight / 40.17;
+  static double iconsSize16 = screenHeight / 52.75;
   // list view layout
   static double listViewImgSize = screenWidth / 3.25;
   static double listViewTxtContainerSize = screenWidth / 3.9;
+
+  static double popularProductImgBg = screenHeight / 2.41;
 }
