@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
+import 'package:em_store/widgets/column_rating_card.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/icon_and_icon_widget.dart';
 import 'package:em_store/widgets/list_product_layout.dart';
@@ -141,60 +142,10 @@ class _HomePageBodyState extends State<HomePageBody> {
                     )
                   ]),
               child: Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      HeadLineText(text: "Sample Head Text"),
-                      SizedBox(
-                        height: Dimensions.spaceHeight10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Wrap(
-                            children: List.generate(
-                                5,
-                                (index) => const Icon(
-                                      Icons.star,
-                                      color: AppColors.mainColor,
-                                      size: 15,
-                                    )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          SmallBodyText(text: '4.5'),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          SmallBodyText(text: '128 Comments')
-                        ],
-                      ),
-                      SizedBox(
-                        height: Dimensions.spaceHeight20,
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: const [
-                            IconAndTextWidget(
-                                icon: Icons.circle,
-                                color: AppColors.mainColor,
-                                text: 'normal'),
-                            IconAndTextWidget(
-                                icon: Icons.location_on,
-                                color: Colors.green,
-                                text: '36.6km'),
-                            IconAndTextWidget(
-                                icon: Icons.alarm_rounded,
-                                color: AppColors.mainColor,
-                                text: '24min'),
-                          ])
-                    ]),
-              ),
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: const ReusableColumnCard(
+                    cardTitle: 'Sample Card Tile',
+                  )),
             ),
           ),
         ],

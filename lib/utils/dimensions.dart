@@ -24,6 +24,7 @@ class Dimensions {
   static double cardRadius30 = screenHeight / 28.13;
   // dynamic font size
   static double headFontSize = screenHeight / 42.2;
+  static double headFontSize26 = screenHeight / 32.46;
   // dynamic icon size
   static double iconsSize = screenHeight / 40.17;
   static double iconsSize16 = screenHeight / 52.75;
