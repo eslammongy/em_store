@@ -3,7 +3,7 @@ import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 
-//
+//preparing app for calling api && fetching data
 class ExpendableTextWidget extends StatefulWidget {
   final String expendedText;
   const ExpendableTextWidget({super.key, required this.expendedText});

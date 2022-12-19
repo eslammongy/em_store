@@ -69,69 +69,6 @@ class RecommendedItems extends StatelessWidget {
                       expendedText:
                           'Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsto analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions'),
                 ),
-                Container(
-                  height: Dimensions.bottomBarHeight,
-                  padding: EdgeInsets.only(
-                      top: Dimensions.spaceHeight30,
-                      bottom: Dimensions.spaceHeight30,
-                      left: Dimensions.spaceWidth20,
-                      right: Dimensions.spaceWidth20),
-                  decoration: BoxDecoration(
-                      color: AppColors.buttonBGColor,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
-                          topRight:
-                              Radius.circular(Dimensions.cardRadius20 * 2))),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                              top: Dimensions.spaceHeight20,
-                              bottom: Dimensions.spaceHeight20,
-                              left: Dimensions.spaceWidth20,
-                              right: Dimensions.spaceWidth20),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(
-                                  Dimensions.cardRadius20)),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.remove,
-                                color: AppColors.mainBlackColor,
-                              ),
-                              SizedBox(
-                                width: Dimensions.spaceWidth10 / 2,
-                              ),
-                              HeadLineText(text: '0'),
-                              SizedBox(
-                                width: Dimensions.spaceWidth10 / 2,
-                              ),
-                              const Icon(
-                                Icons.add,
-                                color: AppColors.mainBlackColor,
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(
-                              top: Dimensions.spaceHeight20,
-                              bottom: Dimensions.spaceHeight20,
-                              left: Dimensions.spaceWidth20,
-                              right: Dimensions.spaceWidth20),
-                          decoration: BoxDecoration(
-                              color: AppColors.mainColor,
-                              borderRadius: BorderRadius.circular(
-                                  Dimensions.cardRadius20)),
-                          child: HeadLineText(
-                            text: '\$10 Add To Cart',
-                            textColor: Colors.white,
-                          ),
-                        )
-                      ]),
-                ),
               ],
             ),
           ),
@@ -181,7 +118,7 @@ class RecommendedItems extends StatelessWidget {
               left: Dimensions.spaceWidth20,
               right: Dimensions.spaceWidth20),
           decoration: BoxDecoration(
-              color: AppColors.textColor,
+              color: Colors.black12,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
                   topRight: Radius.circular(Dimensions.cardRadius20 * 2))),
@@ -194,7 +131,7 @@ class RecommendedItems extends StatelessWidget {
                     left: Dimensions.spaceWidth20,
                     right: Dimensions.spaceWidth20),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.white24,
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius20)),
                 child: Icon(

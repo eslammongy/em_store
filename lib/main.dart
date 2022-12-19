@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'views/splash/splash_screen.dart';
+import 'helper/dependencies.dart' as helper;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await helper.init();
   runApp(const MyApp());
 }
 
