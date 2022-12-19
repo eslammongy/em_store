@@ -6,21 +6,20 @@ class SmallBodyText extends StatelessWidget {
   final String text;
   double textSize;
   double lineHeight;
-  TextOverflow textOverflow;
-  SmallBodyText(
-      {Key? key,
-      this.textColor = Colors.black26,
-      required this.text,
-      this.textSize = 12,
-      this.lineHeight = 1.2,
-      this.textOverflow = TextOverflow.ellipsis})
-      : super(key: key);
+  SmallBodyText({
+    Key? key,
+    this.textColor = Colors.black26,
+    required this.text,
+    this.textSize = 12,
+    this.lineHeight = 1.2,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      overflow: textOverflow,
+
+      //maxLines: 2,
       style: TextStyle(
           color: textColor,
           fontSize: textSize,

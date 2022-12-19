@@ -2,6 +2,7 @@ import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/widgets/app_icons.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
+import 'package:em_store/widgets/expanded_text.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/head_text.dart';
 
@@ -61,7 +62,18 @@ class PopularProductsDetail extends StatelessWidget {
                       SizedBox(
                         height: Dimensions.spaceHeight20,
                       ),
-                      HeadLineText(text: 'Introduce:  '),
+                      HeadLineText(text: 'Introduce '),
+                      SizedBox(
+                        height: Dimensions.spaceHeight20,
+                      ),
+                      const Expanded(
+                        child: SingleChildScrollView(
+                          physics: BouncingScrollPhysics(),
+                          child: ExpendableTextWidget(
+                              expendedText:
+                                  'Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions'),
+                        ),
+                      )
                     ],
                   )))
         ],
@@ -91,7 +103,7 @@ class PopularProductsDetail extends StatelessWidget {
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
             child: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.remove,
                   color: AppColors.mainBlackColor,
                 ),
@@ -102,7 +114,7 @@ class PopularProductsDetail extends StatelessWidget {
                 SizedBox(
                   width: Dimensions.spaceWidth10 / 2,
                 ),
-                Icon(
+                const Icon(
                   Icons.add,
                   color: AppColors.mainBlackColor,
                 )

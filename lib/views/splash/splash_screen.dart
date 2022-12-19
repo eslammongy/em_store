@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/views/home/main_home_page.dart';
+import 'package:em_store/views/recommended_product/recommended_items.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 2), (timer) {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const PopularProductsDetail()));
+          MaterialPageRoute(builder: (context) => const RecommendedItems()));
       timer.cancel();
     });
   }
