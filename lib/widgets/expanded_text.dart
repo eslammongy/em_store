@@ -3,6 +3,7 @@ import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 
+//
 class ExpendableTextWidget extends StatefulWidget {
   final String expendedText;
   const ExpendableTextWidget({super.key, required this.expendedText});
@@ -16,7 +17,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
   late String secondHalf;
 
   bool hiddenText = true;
-  double textLength = Dimensions.screenHeight / 50;
+  double textLength = Dimensions.screenHeight / 5.80;
 
   @override
   void initState() {
