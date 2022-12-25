@@ -1,4 +1,5 @@
 import 'package:em_store/data/repository/popular_product_repo.dart';
+import 'package:em_store/models/product_model.dart';
 import 'package:get/get.dart';
 
 class PopularProductController extends GetxController {
@@ -11,7 +12,9 @@ class PopularProductController extends GetxController {
     Response response = await popularProductRepo.getPopularProducts();
     if (response.statusCode == 200) {
       _popularProductList = [];
-      //_popularProductList.addAll('iterable');
+      _popularProductList
+          .addAll(PopularProducts.fromJson(response.body).products);
+      print(_popularProductList);
       update();
     } else {}
   }
