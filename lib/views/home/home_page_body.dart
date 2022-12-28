@@ -1,12 +1,15 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:em_store/controllers/popular_controller.dart';
+import 'package:em_store/models/product_model.dart';
+import 'package:em_store/utils/app_constant.dart';
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
 import 'package:em_store/widgets/head_text.dart';
-import 'package:em_store/widgets/icon_and_icon_widget.dart';
 import 'package:em_store/widgets/list_product_layout.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePageBody extends StatefulWidget {
   const HomePageBody({Key? key}) : super(key: key);
@@ -45,25 +48,29 @@ class _HomePageBodyState extends State<HomePageBody> {
     return Column(
       children: [
         // top slider section
-        SizedBox(
-          height: Dimensions.pageView,
-          child: PageView.builder(
-              controller: pageController,
-              itemCount: 5,
-              itemBuilder: (context, position) {
-                return _buildPageItem(position);
-              }),
-        ),
-        DotsIndicator(
-            dotsCount: 5,
-            position: _currentPageValue,
-            decorator: DotsDecorator(
-              activeColor: AppColors.mainColor,
-              size: const Size.square(9.0),
-              activeSize: const Size(18.0, 9.0),
-              activeShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0)),
-            )),
+   GetBuilder<PopularProductController>(builder: (popularProducts){
+     return popularProducts.isLoaded?SizedBox(
+       height: Dimensions.pageView,
+       child: PageView.builder(
+           controller: pageController,
+           itemCount: popularProducts.popularProductsList.length,
+           itemBuilder: (context, position) {
+             return _buildPageItem(position, popularProducts.popularProductsList[position]);
+           }),
+     ): const CircularProgressIndicator(color: AppColors.mainColor,backgroundColor: AppColors.mainBlackColor,strokeWidth: 1.0,);
+   }),
+   GetBuilder<PopularProductController>(builder: (popularProducts){
+     return DotsIndicator(
+         dotsCount:popularProducts.popularProductsList.isEmpty ? 1 :popularProducts.popularProductsList.length ,
+         position: _currentPageValue,
+         decorator: DotsDecorator(
+           activeColor: AppColors.mainColor,
+           size: const Size.square(9.0),
+           activeSize: const Size(18.0, 9.0),
+           activeShape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.circular(5.0)),
+         ));
+   }),
         // popular items section
         SizedBox(
           height: Dimensions.spaceHeight30,
@@ -100,7 +107,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   }
 
 // creating slider container
-  Widget _buildPageItem(int position) {
+  Widget _buildPageItem(int position, ProductModel productModel) {
     return Transform(
       transform: createMatrixTransform(position),
       child: Stack(
@@ -112,9 +119,9 @@ class _HomePageBodyState extends State<HomePageBody> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius30),
                 /*  color: position.isEven ? Colors.amber[900] : Colors.purple[300], */
-                image: const DecorationImage(
+                image:  DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/images/pexels_carollo.jpg'))),
+                    image: NetworkImage("${AppConstant.BASE_URL}uploads/${productModel.img!}"))),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -143,8 +150,8 @@ class _HomePageBodyState extends State<HomePageBody> {
                   ]),
               child: Container(
                   padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: const ReusableColumnCard(
-                    cardTitle: 'Sample Card Tile',
+                  child: ReusableColumnCard(
+                    cardTitle: productModel.name!,
                   )),
             ),
           ),
