@@ -8,6 +8,6 @@ class PopularProductRepo extends GetxService {
   PopularProductRepo({required this.apiClient});
 
   Future<Response> getPopularProducts() async {
-    return await apiClient.getData(AppConstant.POPURAL_PRODUCT_ENDPOINT);
+    return await apiClient.getData(AppConstant.POPULAR_PRODUCT_ENDPOINT);
   }
 }

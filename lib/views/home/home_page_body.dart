@@ -48,29 +48,42 @@ class _HomePageBodyState extends State<HomePageBody> {
     return Column(
       children: [
         // top slider section
-   GetBuilder<PopularProductController>(builder: (popularProducts){
-     return popularProducts.isLoaded?SizedBox(
-       height: Dimensions.pageView,
-       child: PageView.builder(
-           controller: pageController,
-           itemCount: popularProducts.popularProductsList.length,
-           itemBuilder: (context, position) {
-             return _buildPageItem(position, popularProducts.popularProductsList[position]);
-           }),
-     ): const CircularProgressIndicator(color: AppColors.mainColor,backgroundColor: AppColors.mainBlackColor,strokeWidth: 1.0,);
-   }),
-   GetBuilder<PopularProductController>(builder: (popularProducts){
-     return DotsIndicator(
-         dotsCount:popularProducts.popularProductsList.isEmpty ? 1 :popularProducts.popularProductsList.length ,
-         position: _currentPageValue,
-         decorator: DotsDecorator(
-           activeColor: AppColors.mainColor,
-           size: const Size.square(9.0),
-           activeSize: const Size(18.0, 9.0),
-           activeShape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(5.0)),
-         ));
-   }),
+        GetBuilder<PopularProductController>(builder: (popularProducts) {
+          var dataLoaded = popularProducts.isLoaded;
+          return dataLoaded
+              ? SizedBox(
+                  height: Dimensions.pageView,
+                  child: PageView.builder(
+                      controller: pageController,
+                      itemCount: popularProducts.popularProductsList.length,
+                      itemBuilder: (context, position) {
+                        return _buildPageItem(position,
+                            popularProducts.popularProductsList[position]);
+                      }),
+                )
+              : Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const CircularProgressIndicator(
+                    color: AppColors.mainColor,
+                    backgroundColor: AppColors.mainBlackColor,
+                    strokeWidth: 3.0,
+                  ),
+                );
+        }),
+        GetBuilder<PopularProductController>(builder: (popularProducts) {
+          return DotsIndicator(
+              dotsCount: popularProducts.popularProductsList.isEmpty
+                  ? 1
+                  : popularProducts.popularProductsList.length,
+              position: _currentPageValue,
+              decorator: DotsDecorator(
+                activeColor: AppColors.mainColor,
+                size: const Size.square(9.0),
+                activeSize: const Size(18.0, 9.0),
+                activeShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0)),
+              ));
+        }),
         // popular items section
         SizedBox(
           height: Dimensions.spaceHeight30,
@@ -78,7 +91,10 @@ class _HomePageBodyState extends State<HomePageBody> {
         Container(
           margin: EdgeInsets.only(left: Dimensions.spaceWidth30),
           child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-            HeadLineText(text: "Popular"),
+            HeadLineText(
+              text: "Recommended",
+              textWeight: FontWeight.w700,
+            ),
             SizedBox(
               width: Dimensions.spaceWidth10,
             ),
@@ -119,9 +135,10 @@ class _HomePageBodyState extends State<HomePageBody> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius30),
                 /*  color: position.isEven ? Colors.amber[900] : Colors.purple[300], */
-                image:  DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage("${AppConstant.BASE_URL}uploads/${productModel.img!}"))),
+                    image: NetworkImage(
+                        "${AppConstant.BASE_URL}uploads/${productModel.img!}"))),
           ),
           Align(
             alignment: Alignment.bottomCenter,
