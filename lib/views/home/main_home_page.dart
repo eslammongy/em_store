@@ -53,7 +53,7 @@ class _MainHomePageState extends State<MainHomePage> {
                   height: Dimensions.spaceHeight50,
                   decoration: BoxDecoration(
                     borderRadius:
-                        BorderRadius.circular(Dimensions.cardRadius15),
+                        BorderRadius.circular(Dimensions.cardRadius30),
                     color: AppColors.mainColor,
                   ),
                   child: Icon(

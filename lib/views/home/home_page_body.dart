@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:em_store/controllers/popular_controller.dart';
+import 'package:em_store/controllers/recommended_controller.dart';
 import 'package:em_store/models/product_model.dart';
 import 'package:em_store/utils/app_constant.dart';
 import 'package:em_store/utils/colors.dart';
@@ -110,14 +111,30 @@ class _HomePageBodyState extends State<HomePageBody> {
         ),
         // list of products here
         // ignore: sized_box_for_whitespace
-        ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              // build list layout item view
-              return const ProductListLayout();
-            }),
+        GetBuilder<RecommendedProductController>(
+            builder: ((recommendedController) {
+          return recommendedController.isLoaded
+              ? ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount:
+                      recommendedController.recommendedProductsList.length,
+                  itemBuilder: (context, index) {
+                    // build list layout item view
+                    return ProductListLayout(
+                      controller: recommendedController,
+                      index: index,
+                    );
+                  })
+              : Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const CircularProgressIndicator(
+                    color: AppColors.mainColor,
+                    backgroundColor: AppColors.mainBlackColor,
+                    strokeWidth: 3.0,
+                  ),
+                );
+        })),
       ],
     );
   }

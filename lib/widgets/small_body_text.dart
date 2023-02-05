@@ -18,8 +18,7 @@ class SmallBodyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-
-      //maxLines: 2,
+      maxLines: 2,
       style: TextStyle(
           color: textColor,
           fontSize: textSize,

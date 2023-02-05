@@ -1,13 +1,24 @@
-import 'package:em_store/widgets/head_text.dart';
-import 'package:em_store/widgets/small_body_text.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
+import 'package:em_store/controllers/recommended_controller.dart';
+import 'package:em_store/widgets/head_text.dart';
+import 'package:em_store/widgets/small_body_text.dart';
+
+import '../utils/app_constant.dart';
 import '../utils/colors.dart';
 import '../utils/dimensions.dart';
 import 'icon_and_icon_widget.dart';
 
 class ProductListLayout extends StatelessWidget {
-  const ProductListLayout({super.key});
+  RecommendedProductController controller;
+  int index;
+  ProductListLayout({
+    Key? key,
+    required this.controller,
+    required this.index,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +35,10 @@ class ProductListLayout extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
                 color: Colors.white12,
-                image: const DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.cover,
-                    image:
-                        AssetImage('assets/images/pexels_anthony_derosa.jpg'))),
+                    image: NetworkImage(
+                        "${AppConstant.BASE_URL}uploads/${controller.recommendedProductsList[index].img!}"))),
           ),
           Expanded(
             child: Container(
@@ -47,11 +58,15 @@ class ProductListLayout extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      HeadLineText(text: 'Sample Product title and name'),
+                      HeadLineText(
+                          text:
+                              controller.recommendedProductsList[index].name!),
                       SizedBox(
                         height: Dimensions.spaceHeight10,
                       ),
-                      SmallBodyText(text: 'this our product description here '),
+                      SmallBodyText(
+                          text: controller
+                              .recommendedProductsList[index].description!),
                       SizedBox(
                         height: Dimensions.spaceHeight10,
                       ),
