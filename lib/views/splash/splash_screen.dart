@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
             begin: Alignment.topLeft,
             end: Alignment
                 .bottomRight, // 10% of the width, so there are ten blinds.
-            colors: [Color(0xff2b2b2b), Colors.black45], // red to yellow
+            colors: [Color(0xFFE7E7E7), Colors.white], // red to yellow
             tileMode: TileMode.repeated,
           ),
         ),
@@ -51,18 +51,20 @@ class _SplashScreenState extends State<SplashScreen> {
                 margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
                 padding: EdgeInsets.zero,
                 child: Image.asset(
-                  'assets/images/icons_digital_clock.png',
+                  'assets/images/app_logo.png',
                   fit: BoxFit.fill,
                   width: 150,
-                  height: 150,
                 ),
               ),
             ),
-            HeadLineText(
-              text: 'Clock Store',
-              textColor: AppColors.mainColor,
-              textSize: 35,
-              textWeight: FontWeight.w700,
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: HeadLineText(
+                text: 'Store',
+                textColor: AppColors.mainColor,
+                textSize: 50,
+                textWeight: FontWeight.w800,
+              ),
             ),
             const SizedBox(
               height: 20,
