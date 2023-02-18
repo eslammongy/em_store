@@ -5,6 +5,7 @@ import 'package:em_store/models/product_model.dart';
 import 'package:em_store/utils/app_constant.dart';
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
+import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/list_product_layout.dart';
@@ -58,8 +59,10 @@ class _HomePageBodyState extends State<HomePageBody> {
                       controller: pageController,
                       itemCount: popularProducts.popularProductsList.length,
                       itemBuilder: (context, position) {
-                        return _buildPageItem(position,
-                            popularProducts.popularProductsList[position]);
+                        return buildPageItem(
+                            position,
+                            popularProducts.popularProductsList[position],
+                            createMatrixTransform(position));
                       }),
                 )
               : Container(
@@ -136,61 +139,6 @@ class _HomePageBodyState extends State<HomePageBody> {
                 );
         })),
       ],
-    );
-  }
-
-// creating slider container
-  Widget _buildPageItem(int position, ProductModel productModel) {
-    return Transform(
-      transform: createMatrixTransform(position),
-      child: Stack(
-        children: [
-          Container(
-            height: Dimensions.pageViewContainer,
-            margin: EdgeInsets.only(
-                left: Dimensions.spaceWidth10, right: Dimensions.spaceWidth10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.cardRadius30),
-                /*  color: position.isEven ? Colors.amber[900] : Colors.purple[300], */
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "${AppConstant.BASE_URL}uploads/${productModel.img!}"))),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: Dimensions.pageViewTextContainer,
-              margin: EdgeInsets.only(
-                  left: Dimensions.spaceWidth30,
-                  right: Dimensions.spaceWidth30,
-                  bottom: Dimensions.spaceWidth10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
-                  color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Color(0xFFe8e8e8),
-                        offset: Offset(0, 5),
-                        blurRadius: 5.0),
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(-5, 0),
-                    ),
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset(5, 0),
-                    )
-                  ]),
-              child: Container(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: ReusableColumnCard(
-                    cardTitle: productModel.name!,
-                  )),
-            ),
-          ),
-        ],
-      ),
     );
   }
 

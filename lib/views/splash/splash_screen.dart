@@ -36,10 +36,10 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
+            begin: Alignment.topCenter,
             end: Alignment
-                .bottomRight, // 10% of the width, so there are ten blinds.
-            colors: [Color(0xFFE7E7E7), Colors.white], // red to yellow
+                .bottomCenter, // 10% of the width, so there are ten blinds.
+            colors: [Color(0xFFF0F0F0), Colors.white], // red to yellow
             tileMode: TileMode.repeated,
           ),
         ),
@@ -53,16 +53,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Image.asset(
                   'assets/images/app_logo.png',
                   fit: BoxFit.fill,
-                  width: 150,
+                  width: 220,
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: HeadLineText(
-                text: 'Store',
+                text: 'Restaurant',
                 textColor: AppColors.mainColor,
-                textSize: 50,
+                textSize: 40,
                 textWeight: FontWeight.w800,
               ),
             ),
@@ -78,6 +78,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void dispose() {
     super.dispose();
-    // timer.cancel();
+     timer.cancel();
   }
 }

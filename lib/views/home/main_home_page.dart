@@ -50,7 +50,7 @@ class _MainHomePageState extends State<MainHomePage> {
               Center(
                 child: Container(
                   width: Dimensions.spaceHeight50,
-                  height: Dimensions.spaceHeight50,
+                  height: Dimensions.spaceWidth30,
                   decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius30),
