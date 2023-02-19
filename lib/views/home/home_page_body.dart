@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
+import 'package:em_store/helper/routes_helper.dart';
 import 'package:em_store/models/meals_model.dart';
 import 'package:em_store/helper/utils/app_constant.dart';
 import 'package:em_store/helper/utils/colors.dart';
@@ -59,7 +60,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                   height: Dimensions.pageView,
                   child: GestureDetector(
                     onTap: () {
-                      Get.to(() => const FoodItemsDetails());
+                      Get.toNamed(RoutesHelper.popularMealDetails);
                     },
                     child: PageView.builder(
                         controller: pageController,

@@ -11,7 +11,6 @@ class RecommendedItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -24,6 +23,7 @@ class RecommendedItems extends StatelessWidget {
                   AppIcons(
                     iconData: Icons.clear,
                   ),
+                  Spacer(),
                   AppIcons(
                     iconData: Icons.shopping_cart,
                   )
@@ -51,7 +51,7 @@ class RecommendedItems extends StatelessWidget {
             backgroundColor: const Color.fromARGB(255, 249, 161, 9),
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/images/pexels_anthony_derosa.jpg',
+                'assets/images/offer_2.png',
                 width: double.maxFinite,
                 fit: BoxFit.cover,
               ),

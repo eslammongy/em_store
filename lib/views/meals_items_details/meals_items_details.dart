@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/head_text.dart';
 
-class FoodItemsDetails extends StatelessWidget {
-  const FoodItemsDetails({super.key});
+class MealsItemsDetails extends StatelessWidget {
+  const MealsItemsDetails({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,10 @@
 import 'dart:async';
 
+import 'package:em_store/helper/routes_helper.dart';
 import 'package:em_store/helper/utils/colors.dart';
-import 'package:em_store/views/home/main_home_page.dart';
-import 'package:em_store/views/recommended_meals_items/recommended_meals_items.dart';
 import 'package:em_store/views/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../controllers/popular_meals_controller.dart';
-import '../meals_items_details/meals_items_details.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,8 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const MainHomePage()));
+      Get.toNamed(RoutesHelper.mainHomeRoute);
       timer.cancel();
     });
   }
@@ -78,6 +73,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void dispose() {
     super.dispose();
-     timer.cancel();
+    timer.cancel();
   }
 }
