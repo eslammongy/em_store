@@ -10,5 +10,5 @@ class AppColors {
   static const Color titleColor = Color(0XFF5c524f);
   static const Color mainBlackColor = Color.fromARGB(255, 33, 33, 33);
   static const Color mainOrangeColor = Color(0XFFccc7c5);
-  static const Color iconsBkColor = Color(0xB8F2F2F2);
+  static const Color iconsBkColor = Color(0xCCF2F2F2);
 }

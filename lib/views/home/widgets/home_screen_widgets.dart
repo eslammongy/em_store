@@ -2,7 +2,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/product_model.dart';
+import '../../../models/meals_model.dart';
 import '../../../utils/app_constant.dart';
 import '../../../utils/dimensions.dart';
 import '../../../widgets/column_rating_card.dart';

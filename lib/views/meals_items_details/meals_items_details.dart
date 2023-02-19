@@ -105,7 +105,7 @@ class FoodItemsDetails extends StatelessWidget {
                 left: Dimensions.spaceWidth20,
                 right: Dimensions.spaceWidth20),
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xFFEBEBEB),
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
             child: Row(
               children: [

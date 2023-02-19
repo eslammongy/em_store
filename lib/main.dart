@@ -1,5 +1,5 @@
-import 'package:em_store/controllers/popular_controller.dart';
-import 'package:em_store/controllers/recommended_controller.dart';
+import 'package:em_store/controllers/popular_meals_controller.dart';
+import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'views/splash/splash_screen.dart';
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.find<PopularProductController>().getPopularProductsList();
-    Get.find<RecommendedProductController>().getRecommendedProductsList();
+    Get.find<PopularMealsController>().getPopularMealsList();
+    Get.find<RecommendedMealsController>().getRecommendedMealsList();
     return GetMaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

@@ -1,17 +1,17 @@
-import 'package:em_store/data/repository/popular_food_repo.dart';
-import 'package:em_store/models/product_model.dart';
+import 'package:em_store/data/repository/popular_meals_repo.dart';
+import 'package:em_store/models/meals_model.dart';
 import 'package:get/get.dart';
 
-class PopularProductController extends GetxController {
-  final PopularFoodRepo popularProductRepo;
-  PopularProductController({required this.popularProductRepo});
+class PopularMealsController extends GetxController {
+  final PopularMealsRepo popularProductRepo;
+  PopularMealsController({required this.popularProductRepo});
 
   List<dynamic> _popularProductList = [];
   List<dynamic> get popularProductsList => _popularProductList;
   bool _dataIsLoaded = false;
   bool get isLoaded => _dataIsLoaded;
-  Future<void> getPopularProductsList() async {
-    Response response = await popularProductRepo.getPopularProducts();
+  Future<void> getPopularMealsList() async {
+    Response response = await popularProductRepo.getPopularMeals();
     if (response.statusCode == 200) {
       _popularProductList = [];
       _popularProductList

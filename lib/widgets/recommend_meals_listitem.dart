@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/widgets/custom_circlur_progress.dart';
 import 'package:flutter/material.dart';
 
-import 'package:em_store/controllers/recommended_controller.dart';
+import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 
@@ -13,10 +13,10 @@ import '../utils/colors.dart';
 import '../utils/dimensions.dart';
 import 'icon_and_icon_widget.dart';
 
-class FoodListItem extends StatelessWidget {
-  RecommendedProductController controller;
+class RecommendedMealsItem extends StatelessWidget {
+  RecommendedMealsController controller;
   int index;
-  FoodListItem({
+  RecommendedMealsItem({
     Key? key,
     required this.controller,
     required this.index,

@@ -1,16 +1,16 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:em_store/controllers/popular_controller.dart';
-import 'package:em_store/controllers/recommended_controller.dart';
-import 'package:em_store/models/product_model.dart';
+import 'package:em_store/controllers/popular_meals_controller.dart';
+import 'package:em_store/controllers/recommended_meals_controller.dart';
+import 'package:em_store/models/meals_model.dart';
 import 'package:em_store/utils/app_constant.dart';
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
-import 'package:em_store/views/food_items_details/food_items_details.dart';
+import 'package:em_store/views/meals_items_details/meals_items_details.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
 import 'package:em_store/widgets/custom_circlur_progress.dart';
 import 'package:em_store/widgets/head_text.dart';
-import 'package:em_store/widgets/food_list_item.dart';
+import 'package:em_store/widgets/recommend_meals_listitem.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,7 +52,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return Column(
       children: [
         // top slider section
-        GetBuilder<PopularProductController>(builder: (popularProducts) {
+        GetBuilder<PopularMealsController>(builder: (popularProducts) {
           var dataLoaded = popularProducts.isLoaded;
           return dataLoaded
               ? SizedBox(
@@ -74,7 +74,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                 )
               : const CustomCircularProgress();
         }),
-        GetBuilder<PopularProductController>(builder: (popularProducts) {
+        GetBuilder<PopularMealsController>(builder: (popularProducts) {
           return DotsIndicator(
               dotsCount: popularProducts.popularProductsList.isEmpty
                   ? 1
@@ -114,7 +114,7 @@ class _HomePageBodyState extends State<HomePageBody> {
         ),
         // list of products here
         // ignore: sized_box_for_whitespace
-        GetBuilder<RecommendedProductController>(
+        GetBuilder<RecommendedMealsController>(
             builder: ((recommendedController) {
           return recommendedController.isLoaded
               ? ListView.builder(
@@ -125,7 +125,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                       recommendedController.recommendedProductsList.length,
                   itemBuilder: (context, index) {
                     // build list layout item view
-                    return FoodListItem(
+                    return RecommendedMealsItem(
                       controller: recommendedController,
                       index: index,
                     );
