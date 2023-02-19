@@ -1,10 +1,12 @@
 // creating slider container
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/product_model.dart';
 import '../../../utils/app_constant.dart';
 import '../../../utils/dimensions.dart';
 import '../../../widgets/column_rating_card.dart';
+import '../../../widgets/custom_circlur_progress.dart';
 
 Widget buildPageItem(int position, ProductModel productModel, Matrix4 matrix4) {
   return Transform(
@@ -16,12 +18,22 @@ Widget buildPageItem(int position, ProductModel productModel, Matrix4 matrix4) {
           margin: EdgeInsets.only(
               left: Dimensions.spaceWidth10, right: Dimensions.spaceWidth10),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
-              /*  color: position.isEven ? Colors.amber[900] : Colors.purple[300], */
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      "${AppConstant.BASE_URL}uploads/${productModel.img!}"))),
+            borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
+            /*  color: position.isEven ? Colors.amber[900] : Colors.purple[300], */
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
+            child: CachedNetworkImage(
+              width: double.infinity,
+              imageUrl: "${AppConstant.BASE_URL}uploads/${productModel.img!}",
+              fit: BoxFit.fill,
+              progressIndicatorBuilder: (context, url, progress) {
+                return const Center(child: CustomCircularProgress());
+              },
+              errorWidget: (context, url, error) =>
+                  const Icon(Icons.error_rounded),
+            ),
+          ),
         ),
         Align(
           alignment: Alignment.bottomCenter,

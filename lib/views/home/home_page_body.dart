@@ -6,7 +6,9 @@ import 'package:em_store/utils/app_constant.dart';
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
+import 'package:em_store/views/popular_items/popular_items.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
+import 'package:em_store/widgets/custom_circlur_progress.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:em_store/widgets/list_product_layout.dart';
 import 'package:em_store/widgets/small_body_text.dart';
@@ -55,24 +57,22 @@ class _HomePageBodyState extends State<HomePageBody> {
           return dataLoaded
               ? SizedBox(
                   height: Dimensions.pageView,
-                  child: PageView.builder(
-                      controller: pageController,
-                      itemCount: popularProducts.popularProductsList.length,
-                      itemBuilder: (context, position) {
-                        return buildPageItem(
-                            position,
-                            popularProducts.popularProductsList[position],
-                            createMatrixTransform(position));
-                      }),
-                )
-              : Container(
-                  padding: const EdgeInsets.all(10),
-                  child: const CircularProgressIndicator(
-                    color: AppColors.mainColor,
-                    backgroundColor: AppColors.mainBlackColor,
-                    strokeWidth: 3.0,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(const PopularProductsDetail());
+                    },
+                    child: PageView.builder(
+                        controller: pageController,
+                        itemCount: popularProducts.popularProductsList.length,
+                        itemBuilder: (context, position) {
+                          return buildPageItem(
+                              position,
+                              popularProducts.popularProductsList[position],
+                              createMatrixTransform(position));
+                        }),
                   ),
-                );
+                )
+              : const CustomCircularProgress();
         }),
         GetBuilder<PopularProductController>(builder: (popularProducts) {
           return DotsIndicator(
@@ -119,6 +119,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           return recommendedController.isLoaded
               ? ListView.builder(
                   shrinkWrap: true,
+                  padding: const EdgeInsets.only(top: 20),
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount:
                       recommendedController.recommendedProductsList.length,

@@ -50,7 +50,8 @@ class _MainHomePageState extends State<MainHomePage> {
               Center(
                 child: Container(
                   width: Dimensions.spaceHeight50,
-                  height: Dimensions.spaceWidth30,
+                  height: Dimensions.spaceHeight50,
+                  padding: EdgeInsets.zero,
                   decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius30),
@@ -58,7 +59,7 @@ class _MainHomePageState extends State<MainHomePage> {
                   ),
                   child: Icon(
                     Icons.search,
-                    size: Dimensions.iconsSize,
+                    size: Dimensions.iconsSize + 5,
                     color: Colors.white,
                   ),
                 ),

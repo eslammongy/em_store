@@ -24,8 +24,7 @@ class PopularProductsDetail extends StatelessWidget {
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(
-                            'assets/images/pexels_anthony_derosa.jpg'))),
+                        image: AssetImage('assets/icons/icons_open_box.png'))),
               )),
           Positioned(
               top: Dimensions.spaceHeight50,
@@ -71,7 +70,7 @@ class PopularProductsDetail extends StatelessWidget {
                           physics: BouncingScrollPhysics(),
                           child: ExpendableTextWidget(
                               expendedText:
-                                  'Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions'),
+                                  'Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions'),
                         ),
                       )
                     ],
