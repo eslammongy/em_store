@@ -58,20 +58,15 @@ class _HomePageBodyState extends State<HomePageBody> {
           return dataLoaded
               ? SizedBox(
                   height: Dimensions.pageView,
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.toNamed(RoutesHelper.popularMealDetails);
-                    },
-                    child: PageView.builder(
-                        controller: pageController,
-                        itemCount: popularProducts.popularProductsList.length,
-                        itemBuilder: (context, position) {
-                          return buildPageItem(
-                              position,
-                              popularProducts.popularProductsList[position],
-                              createMatrixTransform(position));
-                        }),
-                  ),
+                  child: PageView.builder(
+                      controller: pageController,
+                      itemCount: popularProducts.popularProductsList.length,
+                      itemBuilder: (context, position) {
+                        return buildPopularSliderItem(
+                            position,
+                            popularProducts.popularProductsList[position],
+                            createMatrixTransform(position));
+                      }),
                 )
               : const CustomCircularProgress();
         }),

@@ -6,8 +6,8 @@ class PopularMealsController extends GetxController {
   final PopularMealsRepo popularProductRepo;
   PopularMealsController({required this.popularProductRepo});
 
-  List<dynamic> _popularProductList = [];
-  List<dynamic> get popularProductsList => _popularProductList;
+  List<MealModel> _popularProductList = [];
+  List<MealModel> get popularProductsList => _popularProductList;
   bool _dataIsLoaded = false;
   bool get isLoaded => _dataIsLoaded;
   Future<void> getPopularMealsList() async {

@@ -1,9 +1,11 @@
+import 'package:em_store/helper/routes_helper.dart';
 import 'package:em_store/helper/utils/colors.dart';
 import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:em_store/views/widgets/app_icons.dart';
 import 'package:em_store/views/widgets/expanded_text.dart';
 import 'package:em_store/views/widgets/head_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RecommendedItems extends StatelessWidget {
   const RecommendedItems({super.key});
@@ -16,33 +18,39 @@ class RecommendedItems extends StatelessWidget {
           SliverAppBar(
             expandedHeight: 300,
             pinned: true,
+            automaticallyImplyLeading: false,
             toolbarHeight: 70,
             title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppIcons(
-                    iconData: Icons.clear,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(RoutesHelper.mainHomeRoute);
+                    },
+                    child: const AppIcons(
+                      iconData: Icons.clear,
+                    ),
                   ),
-                  Spacer(),
-                  AppIcons(
+                  const AppIcons(
                     iconData: Icons.shopping_cart,
                   )
                 ]),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(40),
+              preferredSize: const Size.fromHeight(40),
               child: Container(
                 width: double.maxFinite,
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(Dimensions.cardRadius20),
-                        topRight: Radius.circular(Dimensions.cardRadius20)),
-                    boxShadow: []),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(Dimensions.cardRadius20),
+                      topRight: Radius.circular(Dimensions.cardRadius20)),
+                ),
                 child: Center(
                   child: HeadLineText(
                     text: 'Random Text',
                     textSize: Dimensions.headFontSize26,
+                    textWeight: FontWeight.w700,
                     textColor: AppColors.mainBlackColor,
                   ),
                 ),

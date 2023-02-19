@@ -1,18 +1,27 @@
+import 'package:em_store/controllers/popular_meals_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:em_store/helper/utils/colors.dart';
 import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/widgets/app_icons.dart';
 import 'package:em_store/views/widgets/column_rating_card.dart';
 import 'package:em_store/views/widgets/expanded_text.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import '../widgets/head_text.dart';
 
 class MealsItemsDetails extends StatelessWidget {
-  const MealsItemsDetails({super.key});
+  int mealId;
+  MealsItemsDetails({
+    Key? key,
+    required this.mealId,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var meal = Get.find<PopularMealsController>().popularProductsList[mealId];
+    print("Meal Name=> ${meal.name}");
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
