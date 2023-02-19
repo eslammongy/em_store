@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:em_store/utils/colors.dart';
+import 'package:em_store/helper/utils/colors.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/recommended_meals_items/recommended_meals_items.dart';
-import 'package:em_store/widgets/head_text.dart';
+import 'package:em_store/views/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -2,7 +2,7 @@ import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/data/api/api_client.dart';
 import 'package:em_store/data/repository/popular_meals_repo.dart';
-import 'package:em_store/utils/app_constant.dart';
+import 'package:em_store/helper/utils/app_constant.dart';
 import 'package:get/get.dart';
 
 import '../data/repository/recommended_meals_repo.dart';
@@ -20,5 +20,5 @@ Future<void> init() async {
   Get.lazyPut(() => PopularMealsController(popularProductRepo: Get.find()));
   // init controllers
   Get.lazyPut(
-      () => RecommendedMealsController(RecommendedMealsRepo: Get.find()));
+      () => RecommendedMealsController(recommendedMealsRepo: Get.find()));
 }

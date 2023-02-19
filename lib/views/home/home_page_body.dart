@@ -2,16 +2,16 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/models/meals_model.dart';
-import 'package:em_store/utils/app_constant.dart';
-import 'package:em_store/utils/colors.dart';
-import 'package:em_store/utils/dimensions.dart';
+import 'package:em_store/helper/utils/app_constant.dart';
+import 'package:em_store/helper/utils/colors.dart';
+import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
 import 'package:em_store/views/meals_items_details/meals_items_details.dart';
-import 'package:em_store/widgets/column_rating_card.dart';
-import 'package:em_store/widgets/custom_circlur_progress.dart';
-import 'package:em_store/widgets/head_text.dart';
-import 'package:em_store/widgets/recommend_meals_listitem.dart';
-import 'package:em_store/widgets/small_body_text.dart';
+import 'package:em_store/views/widgets/column_rating_card.dart';
+import 'package:em_store/views/widgets/custom_circlur_progress.dart';
+import 'package:em_store/views/widgets/head_text.dart';
+import 'package:em_store/views/widgets/recommend_meals_listitem.dart';
+import 'package:em_store/views/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -109,7 +109,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             SizedBox(
               width: Dimensions.spaceWidth10,
             ),
-            SmallBodyText(text: 'popular products here..')
+            SmallBodyText(text: 'popular meals here..')
           ]),
         ),
         // list of products here
@@ -130,14 +130,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                       index: index,
                     );
                   })
-              : Container(
-                  padding: const EdgeInsets.all(10),
-                  child: const CircularProgressIndicator(
-                    color: AppColors.mainColor,
-                    backgroundColor: AppColors.mainBlackColor,
-                    strokeWidth: 3.0,
-                  ),
-                );
+              : const CustomCircularProgress();
         })),
       ],
     );

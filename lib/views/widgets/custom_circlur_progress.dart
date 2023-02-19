@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../utils/colors.dart';
+import '../../helper/utils/colors.dart';
 
 class CustomCircularProgress extends StatelessWidget {
   const CustomCircularProgress({super.key});
@@ -15,6 +15,7 @@ class CustomCircularProgress extends StatelessWidget {
       builder: (context, value, _) => CircularProgressIndicator(
         value: value,
         color: Colors.deepPurple,
+        backgroundColor: AppColors.mainOrangeColor,
       ),
     );
   }

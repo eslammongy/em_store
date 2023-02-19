@@ -1,8 +1,8 @@
-import 'package:em_store/utils/colors.dart';
-import 'package:em_store/utils/dimensions.dart';
+import 'package:em_store/helper/utils/colors.dart';
+import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:em_store/views/home/home_page_body.dart';
-import 'package:em_store/widgets/head_text.dart';
-import 'package:em_store/widgets/small_body_text.dart';
+import 'package:em_store/views/widgets/head_text.dart';
+import 'package:em_store/views/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 
 class MainHomePage extends StatefulWidget {

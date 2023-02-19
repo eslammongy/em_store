@@ -1,5 +1,5 @@
 import 'package:em_store/data/api/api_client.dart';
-import 'package:em_store/utils/app_constant.dart';
+import 'package:em_store/helper/utils/app_constant.dart';
 import 'package:get/get.dart';
 
 class RecommendedMealsRepo extends GetxService {

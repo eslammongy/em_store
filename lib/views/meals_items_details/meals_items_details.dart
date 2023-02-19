@@ -1,12 +1,12 @@
-import 'package:em_store/utils/colors.dart';
-import 'package:em_store/utils/dimensions.dart';
+import 'package:em_store/helper/utils/colors.dart';
+import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:em_store/views/home/main_home_page.dart';
-import 'package:em_store/widgets/app_icons.dart';
-import 'package:em_store/widgets/column_rating_card.dart';
-import 'package:em_store/widgets/expanded_text.dart';
+import 'package:em_store/views/widgets/app_icons.dart';
+import 'package:em_store/views/widgets/column_rating_card.dart';
+import 'package:em_store/views/widgets/expanded_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../widgets/head_text.dart';
+import '../widgets/head_text.dart';
 
 class FoodItemsDetails extends StatelessWidget {
   const FoodItemsDetails({super.key});

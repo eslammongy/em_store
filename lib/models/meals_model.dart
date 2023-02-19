@@ -2,8 +2,8 @@ class PopularProducts {
   int? _totalSize;
   int? _typeId;
   int? _offset;
-  late List<ProductModel> _products;
-  List<ProductModel> get products => _products;
+  late List<MealModel> _products;
+  List<MealModel> get products => _products;
 
   PopularProducts(
       {required totalSize,
@@ -21,15 +21,15 @@ class PopularProducts {
     _typeId = json['type_id'];
     _offset = json['offset'];
     if (json['products'] != null) {
-      _products = <ProductModel>[];
+      _products = <MealModel>[];
       json['products'].forEach((v) {
-        _products.add(ProductModel.fromJson(v));
+        _products.add(MealModel.fromJson(v));
       });
     }
   }
 }
 
-class ProductModel {
+class MealModel {
   int? id;
   String? name;
   String? description;
@@ -41,7 +41,7 @@ class ProductModel {
   String? updatedAt;
   int? typeId;
 
-  ProductModel(
+  MealModel(
       {this.id,
       this.name,
       this.description,
@@ -53,7 +53,7 @@ class ProductModel {
       this.updatedAt,
       this.typeId});
 
-  ProductModel.fromJson(Map<String, dynamic> json) {
+  MealModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     description = json['description'];
