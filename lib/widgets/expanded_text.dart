@@ -38,6 +38,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
       child: secondHalf.isEmpty
           ? SmallBodyText(
               text: firstHalf,
+              maxLines: 3,
               lineHeight: 1.4,
               textColor: AppColors.textColor,
               textSize: Dimensions.headFontSize16,
@@ -46,6 +47,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SmallBodyText(
+                    maxLines: 20,
                     textSize: Dimensions.headFontSize16,
                     textColor: AppColors.textColor,
                     lineHeight: 1.4,
@@ -61,6 +63,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
                   child: Row(
                     children: [
                       SmallBodyText(
+                        maxLines: 1,
                         text: hiddenText ? 'Read More..' : 'Show less..',
                         textColor: AppColors.mainColor,
                       ),

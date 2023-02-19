@@ -13,10 +13,10 @@ import '../utils/colors.dart';
 import '../utils/dimensions.dart';
 import 'icon_and_icon_widget.dart';
 
-class ProductListLayout extends StatelessWidget {
+class FoodListItem extends StatelessWidget {
   RecommendedProductController controller;
   int index;
-  ProductListLayout({
+  FoodListItem({
     Key? key,
     required this.controller,
     required this.index,
@@ -32,16 +32,16 @@ class ProductListLayout extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: Dimensions.listViewImgSize,
-            height: Dimensions.listViewImgSize,
+            width: Dimensions.listViewImgSize + 10,
+            height: Dimensions.listViewImgSize + 10,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(15),
               child: CachedNetworkImage(
                 imageUrl:
                     "${AppConstant.BASE_URL}uploads/${controller.recommendedProductsList[index].img!}",
                 fit: BoxFit.fill,
                 progressIndicatorBuilder: (context, url, progress) {
-                  return const Center(child:  CustomCircularProgress());
+                  return const Center(child: CustomCircularProgress());
                 },
                 errorWidget: (context, url, error) =>
                     const Icon(Icons.error_rounded),
@@ -82,6 +82,7 @@ class ProductListLayout extends StatelessWidget {
                         height: Dimensions.spaceHeight10,
                       ),
                       SmallBodyText(
+                          maxLines: 2,
                           text: controller
                               .recommendedProductsList[index].description!),
                       SizedBox(

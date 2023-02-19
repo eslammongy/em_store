@@ -1,9 +1,9 @@
-import 'package:em_store/data/repository/popular_product_repo.dart';
+import 'package:em_store/data/repository/popular_food_repo.dart';
 import 'package:em_store/models/product_model.dart';
 import 'package:get/get.dart';
 
 class PopularProductController extends GetxController {
-  final PopularProductRepo popularProductRepo;
+  final PopularFoodRepo popularProductRepo;
   PopularProductController({required this.popularProductRepo});
 
   List<dynamic> _popularProductList = [];

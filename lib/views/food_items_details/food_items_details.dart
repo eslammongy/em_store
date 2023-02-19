@@ -6,8 +6,8 @@ import 'package:em_store/widgets/expanded_text.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/head_text.dart';
 
-class PopularProductsDetail extends StatelessWidget {
-  const PopularProductsDetail({super.key});
+class FoodItemsDetails extends StatelessWidget {
+  const FoodItemsDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class PopularProductsDetail extends StatelessWidget {
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage('assets/icons/icons_open_box.png'))),
+                        image: AssetImage('assets/images/offer_2.png'))),
               )),
           Positioned(
               top: Dimensions.spaceHeight50,

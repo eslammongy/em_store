@@ -6,11 +6,11 @@ import 'package:em_store/utils/app_constant.dart';
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
 import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
-import 'package:em_store/views/popular_items/popular_items.dart';
+import 'package:em_store/views/food_items_details/food_items_details.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
 import 'package:em_store/widgets/custom_circlur_progress.dart';
 import 'package:em_store/widgets/head_text.dart';
-import 'package:em_store/widgets/list_product_layout.dart';
+import 'package:em_store/widgets/food_list_item.dart';
 import 'package:em_store/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,7 +59,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                   height: Dimensions.pageView,
                   child: GestureDetector(
                     onTap: () {
-                      Get.to(const PopularProductsDetail());
+                      Get.to(() => const FoodItemsDetails());
                     },
                     child: PageView.builder(
                         controller: pageController,
@@ -125,7 +125,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                       recommendedController.recommendedProductsList.length,
                   itemBuilder: (context, index) {
                     // build list layout item view
-                    return ProductListLayout(
+                    return FoodListItem(
                       controller: recommendedController,
                       index: index,
                     );

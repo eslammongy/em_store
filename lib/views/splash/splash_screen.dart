@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/views/home/main_home_page.dart';
-import 'package:em_store/views/recommended_product/recommended_items.dart';
+import 'package:em_store/views/recommended_food_items/recommended_food_items.dart';
 import 'package:em_store/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/popular_controller.dart';
-import '../popular_items/popular_items.dart';
+import '../food_items_details/food_items_details.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
