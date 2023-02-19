@@ -1,3 +1,4 @@
+import 'package:em_store/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppIcons extends StatelessWidget {
@@ -9,8 +10,8 @@ class AppIcons extends StatelessWidget {
   const AppIcons(
       {Key? key,
       required this.iconData,
-      this.iconColor = const Color(0xFF756d54),
-      this.iconBackground = const Color(0xFFfcf4e4),
+      this.iconColor = AppColors.textColor,
+      this.iconBackground = AppColors.iconsBkColor,
       this.size = 40,
       this.iconSize = 16})
       : super(key: key);

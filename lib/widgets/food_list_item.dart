@@ -31,9 +31,17 @@ class FoodListItem extends StatelessWidget {
           bottom: Dimensions.spaceHeight10),
       child: Row(
         children: [
-          SizedBox(
+          Container(
             width: Dimensions.listViewImgSize + 10,
             height: Dimensions.listViewImgSize + 10,
+            decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Color(0xFFe8e8e8),
+                    offset: Offset(0, 10),
+                    blurRadius: 10),
+              ],
+            ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: CachedNetworkImage(

@@ -1,9 +1,11 @@
 import 'package:em_store/utils/colors.dart';
 import 'package:em_store/utils/dimensions.dart';
+import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/widgets/app_icons.dart';
 import 'package:em_store/widgets/column_rating_card.dart';
 import 'package:em_store/widgets/expanded_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../widgets/head_text.dart';
 
 class FoodItemsDetails extends StatelessWidget {
@@ -32,9 +34,14 @@ class FoodItemsDetails extends StatelessWidget {
               right: Dimensions.spaceWidth20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppIcons(iconData: Icons.arrow_back_ios_new_rounded),
-                  AppIcons(iconData: Icons.shopping_cart_outlined)
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Get.to(() => const MainHomePage());
+                      },
+                      child: const AppIcons(
+                          iconData: Icons.arrow_back_ios_new_rounded)),
+                  const AppIcons(iconData: Icons.shopping_cart_outlined)
                 ],
               )),
           Positioned(
