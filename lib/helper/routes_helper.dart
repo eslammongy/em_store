@@ -4,7 +4,7 @@ import 'package:em_store/views/splash/splash_screen.dart';
 import 'package:em_store/views/widgets/recommend_meals_listitem.dart';
 import 'package:get/get.dart';
 
-import '../views/meals_items_details/meals_items_details.dart';
+import '../views/meals_items_details/popular_items_details.dart';
 import '../views/recommended_food_items/recommended_items.dart';
 
 class RoutesHelper {
@@ -24,8 +24,7 @@ class RoutesHelper {
         name: popularMealDetails,
         page: () {
           var mealId = Get.parameters['mealId'];
-          print("Meal ID => $mealId");
-          return MealsItemsDetails(
+          return PopularMealsItemsDetails(
             mealId: int.parse(mealId!),
           );
         },

@@ -11,9 +11,9 @@ import 'package:em_store/views/widgets/expanded_text.dart';
 
 import '../widgets/head_text.dart';
 
-class MealsItemsDetails extends StatelessWidget {
-  int mealId;
-  MealsItemsDetails({
+class PopularMealsItemsDetails extends StatelessWidget {
+  final int mealId;
+  const PopularMealsItemsDetails({
     Key? key,
     required this.mealId,
   }) : super(key: key);
@@ -114,7 +114,7 @@ class MealsItemsDetails extends StatelessWidget {
                 left: Dimensions.spaceWidth20,
                 right: Dimensions.spaceWidth20),
             decoration: BoxDecoration(
-                color: Color(0xFFEBEBEB),
+                color: AppColors.iconsBkColor,
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
             child: Row(
               children: [

@@ -7,7 +7,7 @@ import 'package:em_store/helper/utils/app_constant.dart';
 import 'package:em_store/helper/utils/colors.dart';
 import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
-import 'package:em_store/views/meals_items_details/meals_items_details.dart';
+import 'package:em_store/views/meals_items_details/popular_items_details.dart';
 import 'package:em_store/views/widgets/column_rating_card.dart';
 import 'package:em_store/views/widgets/custom_circlur_progress.dart';
 import 'package:em_store/views/widgets/head_text.dart';
