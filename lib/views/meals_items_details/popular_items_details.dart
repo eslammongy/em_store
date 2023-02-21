@@ -33,7 +33,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
           Positioned(
               left: 0,
               right: 0,
-              child: Container(
+              child: SizedBox(
                 width: double.maxFinite,
                 height: Dimensions.popularProductImgBg,
                 child: CachedNetworkImage(
@@ -67,14 +67,22 @@ class PopularMealsItemsDetails extends StatelessWidget {
           Positioned(
               left: 0,
               right: 0,
-              bottom: 0,
+              bottom: -5,
               top: Dimensions.popularProductImgBg - 20,
               child: Container(
+                  margin: EdgeInsets.only(top: 10),
                   padding: EdgeInsets.only(
                       left: Dimensions.spaceWidth20,
                       right: Dimensions.spaceWidth20,
                       top: Dimensions.spaceWidth20),
                   decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xC3CDCDCD),
+                          blurRadius: 20,
+                          spreadRadius: 8,
+                        )
+                      ],
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(Dimensions.cardRadius20),
                           topRight: Radius.circular(Dimensions.cardRadius20)),
@@ -115,8 +123,8 @@ class PopularMealsItemsDetails extends StatelessWidget {
             decoration: BoxDecoration(
                 color: AppColors.mainGreyColor,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
-                    topRight: Radius.circular(Dimensions.cardRadius20 * 2))),
+                    topLeft: Radius.circular(Dimensions.cardRadius30),
+                    topRight: Radius.circular(Dimensions.cardRadius30))),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

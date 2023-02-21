@@ -1,6 +1,10 @@
 import 'package:em_store/data/repository/popular_meals_repo.dart';
+import 'package:em_store/helper/utils/helper_fun.dart';
 import 'package:em_store/models/meals_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../helper/utils/colors.dart';
 
 class PopularMealsController extends GetxController {
   final PopularMealsRepo popularProductRepo;
@@ -25,10 +29,23 @@ class PopularMealsController extends GetxController {
 
   void setQuantity(bool isIncrement) {
     if (isIncrement) {
-      _quantity = _quantity + 1;
+      _quantity = checkQuantity(_quantity + 1);
     } else {
-      _quantity = _quantity - 1;
+      _quantity = checkQuantity(_quantity - 1);
     }
     update();
+  }
+
+  int checkQuantity(int quantity) {
+    if (quantity < 0) {
+      displaySnackBarCart("Cart Items", "Your cart is already empty !");
+      return 0;
+    } else if (quantity > 20) {
+      displaySnackBarCart("Cart Items",
+          "Your cart is fullfil, you can't adding items anymore !");
+      return 20;
+    } else {
+      return quantity;
+    }
   }
 }
