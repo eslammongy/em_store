@@ -10,6 +10,8 @@ class PopularMealsController extends GetxController {
   List<MealModel> get popularProductsList => _popularProductList;
   bool _dataIsLoaded = false;
   bool get isLoaded => _dataIsLoaded;
+  int _quantity = 0;
+  int get quantity => _quantity;
   Future<void> getPopularMealsList() async {
     Response response = await popularProductRepo.getPopularMeals();
     if (response.statusCode == 200) {
@@ -19,5 +21,14 @@ class PopularMealsController extends GetxController {
       _dataIsLoaded = true;
       update();
     } else {}
+  }
+
+  void setQuantity(bool isIncrement) {
+    if (isIncrement) {
+      _quantity = _quantity + 1;
+    } else {
+      _quantity = _quantity - 1;
+    }
+    update();
   }
 }

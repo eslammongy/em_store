@@ -103,64 +103,81 @@ class PopularMealsItemsDetails extends StatelessWidget {
                   )))
         ],
       ),
-      bottomNavigationBar: Container(
-        height: Dimensions.bottomBarHeight,
-        padding: EdgeInsets.only(
-            top: Dimensions.spaceHeight30,
-            bottom: Dimensions.spaceHeight30,
-            left: Dimensions.spaceWidth20,
-            right: Dimensions.spaceWidth20),
-        decoration: BoxDecoration(
-            color: AppColors.buttonBGColor,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
-                topRight: Radius.circular(Dimensions.cardRadius20 * 2))),
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Container(
+      bottomNavigationBar: GetBuilder<PopularMealsController>(
+        builder: (controller) {
+          return Container(
+            height: Dimensions.bottomBarHeight,
             padding: EdgeInsets.only(
-                top: Dimensions.spaceHeight20,
-                bottom: Dimensions.spaceHeight20,
+                top: Dimensions.spaceHeight30,
+                bottom: Dimensions.spaceHeight30,
                 left: Dimensions.spaceWidth20,
                 right: Dimensions.spaceWidth20),
             decoration: BoxDecoration(
-                color: AppColors.iconsBkColor,
-                borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
+                color: AppColors.mainOrangeColor,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
+                    topRight: Radius.circular(Dimensions.cardRadius20 * 2))),
             child: Row(
-              children: [
-                const Icon(
-                  Icons.remove,
-                  color: AppColors.mainBlackColor,
-                ),
-                SizedBox(
-                  width: Dimensions.spaceWidth10 / 2,
-                ),
-                HeadLineText(text: '0'),
-                SizedBox(
-                  width: Dimensions.spaceWidth10 / 2,
-                ),
-                const Icon(
-                  Icons.add,
-                  color: AppColors.mainBlackColor,
-                )
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-                top: Dimensions.spaceHeight20,
-                bottom: Dimensions.spaceHeight20,
-                left: Dimensions.spaceWidth20,
-                right: Dimensions.spaceWidth20),
-            decoration: BoxDecoration(
-                color: AppColors.mainColor,
-                borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
-            child: HeadLineText(
-              text: "\$ ${selectedMeal.price} | Add To Cart",
-              textColor: Colors.white,
-            ),
-          )
-        ]),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                        top: Dimensions.spaceHeight20,
+                        bottom: Dimensions.spaceHeight20,
+                        left: Dimensions.spaceWidth20,
+                        right: Dimensions.spaceWidth20),
+                    decoration: BoxDecoration(
+                        color: AppColors.iconsBkColor,
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.cardRadius20)),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            controller.setQuantity(false);
+                          },
+                          child: const Icon(
+                            Icons.remove,
+                            color: AppColors.mainBlackColor,
+                          ),
+                        ),
+                        SizedBox(
+                          width: Dimensions.spaceWidth10 / 2,
+                        ),
+                        HeadLineText(text: controller.quantity.toString()),
+                        SizedBox(
+                          width: Dimensions.spaceWidth10 / 2,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            controller.setQuantity(true);
+                          },
+                          child: const Icon(
+                            Icons.add,
+                            color: AppColors.mainBlackColor,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(
+                        top: Dimensions.spaceHeight20,
+                        bottom: Dimensions.spaceHeight20,
+                        left: Dimensions.spaceWidth20,
+                        right: Dimensions.spaceWidth20),
+                    decoration: BoxDecoration(
+                        color: AppColors.mainColor,
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.cardRadius20)),
+                    child: HeadLineText(
+                      text: "\$ ${selectedMeal.price} | Add To Cart",
+                      textColor: Colors.white,
+                    ),
+                  )
+                ]),
+          );
+        },
       ),
     );
   }

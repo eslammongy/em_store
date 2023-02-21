@@ -114,7 +114,7 @@ class RecommendedItems extends StatelessWidget {
                 width: Dimensions.spaceWidth10 / 2,
               ),
               HeadLineText(
-                text: "\$ ${selectedMeal.price} * 0",
+                text: "\$${selectedMeal.price} * 0",
                 textColor: AppColors.mainBlackColor,
                 textSize: Dimensions.headFontSize26,
               ),
@@ -138,23 +138,19 @@ class RecommendedItems extends StatelessWidget {
               left: Dimensions.spaceWidth20,
               right: Dimensions.spaceWidth20),
           decoration: BoxDecoration(
-              color: Colors.black12,
+              color: AppColors.mainOrangeColor,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
                   topRight: Radius.circular(Dimensions.cardRadius20 * 2))),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(
-                padding: EdgeInsets.only(
-                    top: Dimensions.spaceHeight15,
-                    bottom: Dimensions.spaceHeight15,
-                    left: Dimensions.spaceWidth20,
-                    right: Dimensions.spaceWidth20),
+                padding: EdgeInsets.all(Dimensions.spaceHeight10),
                 decoration: BoxDecoration(
-                    color: Colors.white24,
+                    color: AppColors.iconsBkColor,
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius20)),
-                child: Icon(
+                child: const Icon(
                   Icons.favorite,
                   color: AppColors.mainColor,
                 )),
@@ -168,7 +164,7 @@ class RecommendedItems extends StatelessWidget {
                   color: AppColors.mainColor,
                   borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
               child: HeadLineText(
-                text: "\$ ${selectedMeal.price} | Add To Cart",
+                text: "\$${selectedMeal.price} | Add To Cart",
                 textColor: Colors.white,
               ),
             )
