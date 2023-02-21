@@ -1,6 +1,8 @@
+import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/data/api/api_client.dart';
+import 'package:em_store/data/repository/cart_repo.dart';
 import 'package:em_store/data/repository/popular_meals_repo.dart';
 import 'package:em_store/helper/utils/app_constant.dart';
 import 'package:get/get.dart';
@@ -15,10 +17,12 @@ Future<void> init() async {
   Get.lazyPut(() => PopularMealsRepo(apiClient: Get.find()));
   // init repositories
   Get.lazyPut(() => RecommendedMealsRepo(apiClient: Get.find()));
+  Get.lazyPut(() => CartRepo());
 
   // init controllers
   Get.lazyPut(() => PopularMealsController(popularProductRepo: Get.find()));
   // init controllers
   Get.lazyPut(
       () => RecommendedMealsController(recommendedMealsRepo: Get.find()));
+  Get.lazyPut(() => CartController(cartRepo: Get.find()));
 }

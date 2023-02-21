@@ -1,3 +1,4 @@
+import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/data/repository/popular_meals_repo.dart';
 import 'package:em_store/helper/utils/helper_fun.dart';
 import 'package:em_store/models/meals_model.dart';
@@ -10,12 +11,16 @@ class PopularMealsController extends GetxController {
   final PopularMealsRepo popularProductRepo;
   PopularMealsController({required this.popularProductRepo});
 
+  late CartController _cartController;
   List<MealModel> _popularProductList = [];
   List<MealModel> get popularProductsList => _popularProductList;
   bool _dataIsLoaded = false;
   bool get isLoaded => _dataIsLoaded;
   int _quantity = 0;
   int get quantity => _quantity;
+
+  int _inCartItems = 0;
+  int get inCartItems => _inCartItems + _quantity;
   Future<void> getPopularMealsList() async {
     Response response = await popularProductRepo.getPopularMeals();
     if (response.statusCode == 200) {
@@ -47,5 +52,15 @@ class PopularMealsController extends GetxController {
     } else {
       return quantity;
     }
+  }
+
+  void initMealsItems(CartController cartController) {
+    _quantity = 0;
+    _inCartItems = 0;
+    _cartController = cartController;
+  }
+
+  void addInCart(MealModel mealModel) {
+    _cartController.addItemInCart(mealModel, _quantity);
   }
 }

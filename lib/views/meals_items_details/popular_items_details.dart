@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,6 +26,8 @@ class PopularMealsItemsDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     var selectedMeal =
         Get.find<PopularMealsController>().popularProductsList[mealId];
+    Get.find<PopularMealsController>()
+        .initMealsItems(Get.find<CartController>());
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -70,7 +73,6 @@ class PopularMealsItemsDetails extends StatelessWidget {
               bottom: -5,
               top: Dimensions.popularProductImgBg - 20,
               child: Container(
-                  margin: EdgeInsets.only(top: 10),
                   padding: EdgeInsets.only(
                       left: Dimensions.spaceWidth20,
                       right: Dimensions.spaceWidth20,
@@ -178,9 +180,14 @@ class PopularMealsItemsDetails extends StatelessWidget {
                         color: AppColors.mainColor,
                         borderRadius:
                             BorderRadius.circular(Dimensions.cardRadius20)),
-                    child: HeadLineText(
-                      text: "\$ ${selectedMeal.price} | Add To Cart",
-                      textColor: Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.addInCart(selectedMeal);
+                      },
+                      child: HeadLineText(
+                        text: "\$ ${selectedMeal.price} | Add To Cart",
+                        textColor: Colors.white,
+                      ),
                     ),
                   )
                 ]),
