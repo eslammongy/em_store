@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,8 @@ import 'package:em_store/views/widgets/app_icons.dart';
 import 'package:em_store/views/widgets/column_rating_card.dart';
 import 'package:em_store/views/widgets/expanded_text.dart';
 
+import '../../helper/utils/app_constant.dart';
+import '../widgets/custom_circlur_progress.dart';
 import '../widgets/head_text.dart';
 
 class PopularMealsItemsDetails extends StatelessWidget {
@@ -20,8 +23,9 @@ class PopularMealsItemsDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var meal = Get.find<PopularMealsController>().popularProductsList[mealId];
-    print("Meal Name=> ${meal.name}");
+    var selectedMeal =
+        Get.find<PopularMealsController>().popularProductsList[mealId];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -32,10 +36,17 @@ class PopularMealsItemsDetails extends StatelessWidget {
               child: Container(
                 width: double.maxFinite,
                 height: Dimensions.popularProductImgBg,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/images/offer_2.png'))),
+                child: CachedNetworkImage(
+                  width: double.infinity,
+                  imageUrl:
+                      "${AppConstant.BASE_URL}uploads/${selectedMeal.img!}",
+                  fit: BoxFit.fill,
+                  progressIndicatorBuilder: (context, url, progress) {
+                    return const Center(child: CustomCircularProgress());
+                  },
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.error_rounded),
+                ),
               )),
           Positioned(
               top: Dimensions.spaceHeight50,
@@ -71,8 +82,8 @@ class PopularMealsItemsDetails extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const ReusableColumnCard(
-                        cardTitle: 'Sample Card Tile',
+                      ReusableColumnCard(
+                        cardTitle: '${selectedMeal.name}',
                       ),
                       SizedBox(
                         height: Dimensions.spaceHeight20,
@@ -81,12 +92,11 @@ class PopularMealsItemsDetails extends StatelessWidget {
                       SizedBox(
                         height: Dimensions.spaceHeight20,
                       ),
-                      const Expanded(
+                      Expanded(
                         child: SingleChildScrollView(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           child: ExpendableTextWidget(
-                              expendedText:
-                                  'Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions'),
+                              expendedText: '${selectedMeal.description}'),
                         ),
                       )
                     ],
@@ -146,7 +156,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                 color: AppColors.mainColor,
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
             child: HeadLineText(
-              text: '\$10 Add To Cart',
+              text: "\$ ${selectedMeal.price} | Add To Cart",
               textColor: Colors.white,
             ),
           )

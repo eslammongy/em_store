@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/helper/routes_helper.dart';
 import 'package:em_store/helper/utils/colors.dart';
 import 'package:em_store/helper/utils/dimensions.dart';
@@ -7,11 +9,17 @@ import 'package:em_store/views/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../helper/utils/app_constant.dart';
+import '../widgets/custom_circlur_progress.dart';
+
 class RecommendedItems extends StatelessWidget {
-  const RecommendedItems({super.key});
+  final int mealId;
+  const RecommendedItems({super.key, required this.mealId});
 
   @override
   Widget build(BuildContext context) {
+    var selectedMeal =
+        Get.find<RecommendedMealsController>().recommendedProductsList[mealId];
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -48,7 +56,7 @@ class RecommendedItems extends StatelessWidget {
                 ),
                 child: Center(
                   child: HeadLineText(
-                    text: 'Random Text',
+                    text: '${selectedMeal.name}',
                     textSize: Dimensions.headFontSize26,
                     textWeight: FontWeight.w700,
                     textColor: AppColors.mainBlackColor,
@@ -58,10 +66,15 @@ class RecommendedItems extends StatelessWidget {
             ),
             backgroundColor: const Color.fromARGB(255, 249, 161, 9),
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                'assets/images/offer_2.png',
-                width: double.maxFinite,
-                fit: BoxFit.cover,
+              background: CachedNetworkImage(
+                width: double.infinity,
+                imageUrl: "${AppConstant.BASE_URL}uploads/${selectedMeal.img!}",
+                fit: BoxFit.fill,
+                progressIndicatorBuilder: (context, url, progress) {
+                  return const Center(child: CustomCircularProgress());
+                },
+                errorWidget: (context, url, error) =>
+                    const Icon(Icons.error_rounded),
               ),
             ),
           ),
@@ -73,9 +86,8 @@ class RecommendedItems extends StatelessWidget {
                     left: Dimensions.spaceWidth10,
                     right: Dimensions.spaceWidth10,
                   ),
-                  child: const ExpendableTextWidget(
-                      expendedText:
-                          'Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsthe workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally  Logical thinking is a valued trait in the workplace because it allows people to think rationally when making decisions. It is a soft skill that is an integral part of a programming unit. This is because logic is required to analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisionsto analyze a problem, formulate a plan, code a solution, evaluate the program,  and justify decisions'),
+                  child: ExpendableTextWidget(
+                      expendedText: '${selectedMeal.description}'),
                 ),
               ],
             ),
@@ -102,7 +114,7 @@ class RecommendedItems extends StatelessWidget {
                 width: Dimensions.spaceWidth10 / 2,
               ),
               HeadLineText(
-                text: '\$120 X 0',
+                text: "\$ ${selectedMeal.price} * 0",
                 textColor: AppColors.mainBlackColor,
                 textSize: Dimensions.headFontSize26,
               ),
@@ -156,7 +168,7 @@ class RecommendedItems extends StatelessWidget {
                   color: AppColors.mainColor,
                   borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
               child: HeadLineText(
-                text: '\$10 Add To Cart',
+                text: "\$ ${selectedMeal.price} | Add To Cart",
                 textColor: Colors.white,
               ),
             )

@@ -16,6 +16,8 @@ class RoutesHelper {
       "$popularMealDetails?mealId=$mealID";
 
   static const String recommendedMealDetails = "/recommendedMealDetails";
+  static String getRecommendedMealDetails(int mealID) =>
+      "$recommendedMealDetails?mealId=$mealID";
 
   static List<GetPage> routes = [
     GetPage(name: initialRoute, page: () => const SplashScreen()),
@@ -28,10 +30,15 @@ class RoutesHelper {
             mealId: int.parse(mealId!),
           );
         },
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: recommendedMealDetails,
-        page: () => const RecommendedItems(),
-        transition: Transition.cupertino)
+        page: () {
+          var mealId = Get.parameters['mealId'];
+          return RecommendedItems(
+            mealId: int.parse(mealId!),
+          );
+        },
+        transition: Transition.fadeIn)
   ];
 }

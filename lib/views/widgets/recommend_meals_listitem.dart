@@ -28,7 +28,7 @@ class RecommendedMealsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed(RoutesHelper.recommendedMealDetails);
+        Get.toNamed(RoutesHelper.getRecommendedMealDetails(index));
       },
       child: Container(
         margin: EdgeInsets.only(
@@ -66,6 +66,7 @@ class RecommendedMealsItem extends StatelessWidget {
               child: Container(
                 height: Dimensions.listViewImgSize,
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(Dimensions.cardRadius20),
                       bottomRight: Radius.circular(Dimensions.cardRadius20)),
