@@ -113,7 +113,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                 left: Dimensions.spaceWidth20,
                 right: Dimensions.spaceWidth20),
             decoration: BoxDecoration(
-                color: AppColors.mainOrangeColor,
+                color: AppColors.mainGreyColor,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
                     topRight: Radius.circular(Dimensions.cardRadius20 * 2))),

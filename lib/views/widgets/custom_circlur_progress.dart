@@ -15,7 +15,7 @@ class CustomCircularProgress extends StatelessWidget {
       builder: (context, value, _) => CircularProgressIndicator(
         value: value,
         color: Colors.deepPurple,
-        backgroundColor: AppColors.mainOrangeColor,
+        backgroundColor: AppColors.mainGreyColor,
       ),
     );
   }
