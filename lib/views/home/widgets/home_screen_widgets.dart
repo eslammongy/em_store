@@ -70,6 +70,7 @@ Widget buildPopularSliderItem(int index, MealModel mealModel, Matrix4 matrix4) {
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: ReusableColumnCard(
                     cardTitle: mealModel.name!,
+                    
                   )),
             ),
           ),

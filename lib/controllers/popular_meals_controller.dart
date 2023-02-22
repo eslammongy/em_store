@@ -42,10 +42,10 @@ class PopularMealsController extends GetxController {
   }
 
   int checkQuantity(int quantity) {
-    if (quantity < 0) {
+    if ((_inCartItems + quantity) < 0) {
       displaySnackBarCart("Cart Items", "Your cart is already empty !");
       return 0;
-    } else if (quantity > 20) {
+    } else if ((_inCartItems + quantity) > 20) {
       displaySnackBarCart("Cart Items",
           "Your cart is fullfil, you can't adding items anymore !");
       return 20;
@@ -60,6 +60,9 @@ class PopularMealsController extends GetxController {
     _cartController = cartController;
     var exist = false;
     exist = _cartController.checkItemExistInCart(mealModel);
+    if (exist) {
+      _inCartItems = _cartController.getQuantity(mealModel);
+    }
   }
 
   void addInCart(MealModel mealModel) {

@@ -154,7 +154,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                         SizedBox(
                           width: Dimensions.spaceWidth10 / 2,
                         ),
-                        HeadLineText(text: controller.quantity.toString()),
+                        HeadLineText(text: controller.inCartItems.toString()),
                         SizedBox(
                           width: Dimensions.spaceWidth10 / 2,
                         ),

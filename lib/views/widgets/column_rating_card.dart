@@ -18,7 +18,7 @@ class ReusableColumnCard extends StatelessWidget {
       ),
       HeadLineText(
         text: cardTitle,
-        textSize: Dimensions.headFontSize + 5,
+        textSize: Dimensions.headFontSize26,
       ),
       SizedBox(
         height: Dimensions.spaceHeight10,
