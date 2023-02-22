@@ -98,6 +98,7 @@ class RecommendedMealsItem extends StatelessWidget {
                         ),
                         SmallBodyText(
                             maxLines: 2,
+                            
                             text: controller
                                 .recommendedProductsList[index].description!),
                         SizedBox(

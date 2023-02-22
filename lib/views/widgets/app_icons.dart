@@ -10,7 +10,7 @@ class AppIcons extends StatelessWidget {
   const AppIcons(
       {Key? key,
       required this.iconData,
-      this.iconColor = AppColors.textColor,
+      this.iconColor = AppColors.mainBlackColor,
       this.iconBackground = AppColors.iconsBkColor,
       this.size = 40,
       this.iconSize = 16})

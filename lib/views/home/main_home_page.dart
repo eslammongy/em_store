@@ -37,11 +37,11 @@ class _MainHomePageState extends State<MainHomePage> {
                     children: [
                       SmallBodyText(
                         text: 'Monomania',
-                        textColor: AppColors.textColor,
+                        textColor: AppColors.mainBlackColor,
                       ),
                       const Icon(
                         Icons.arrow_drop_down_rounded,
-                        color: AppColors.textColor,
+                        color: AppColors.mainBlackColor,
                       )
                     ],
                   )

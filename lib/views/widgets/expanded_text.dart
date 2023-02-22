@@ -40,7 +40,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
               text: firstHalf,
               maxLines: 3,
               lineHeight: 1.4,
-              textColor: AppColors.textColor,
+              textColor: AppColors.mainBlackColor,
               textSize: Dimensions.headFontSize16,
             )
           : Column(
@@ -49,7 +49,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
                 SmallBodyText(
                     maxLines: 20,
                     textSize: Dimensions.headFontSize16,
-                    textColor: AppColors.textColor,
+                    textColor: AppColors.mainGreyColor,
                     lineHeight: 1.4,
                     text: hiddenText
                         ? ('$firstHalf...')

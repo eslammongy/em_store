@@ -137,11 +137,13 @@ class RecommendedItems extends StatelessWidget {
               bottom: Dimensions.spaceHeight30,
               left: Dimensions.spaceWidth20,
               right: Dimensions.spaceWidth20),
+          margin: EdgeInsets.only(
+              bottom: Dimensions.spaceHeight10,
+              left: Dimensions.spaceWidth10,
+              right: Dimensions.spaceWidth10),
           decoration: BoxDecoration(
               color: AppColors.mainGreyColor,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(Dimensions.cardRadius20 * 2),
-                  topRight: Radius.circular(Dimensions.cardRadius20 * 2))),
+              borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(

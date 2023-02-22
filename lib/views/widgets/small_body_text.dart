@@ -1,3 +1,4 @@
+import 'package:em_store/helper/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -9,7 +10,7 @@ class SmallBodyText extends StatelessWidget {
   int maxLines;
   SmallBodyText({
     Key? key,
-    this.textColor = Colors.black26,
+    this.textColor = AppColors.mainGreyColor,
     required this.text,
     this.textSize = 12,
     this.lineHeight = 1.2,

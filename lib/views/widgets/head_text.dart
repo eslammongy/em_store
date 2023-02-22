@@ -1,3 +1,4 @@
+import 'package:em_store/helper/utils/colors.dart';
 import 'package:em_store/helper/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class HeadLineText extends StatelessWidget {
   TextOverflow textOverflow;
   HeadLineText(
       {Key? key,
-      this.textColor = Colors.black54,
+      this.textColor = AppColors.mainBlackColor,
       required this.text,
       this.textSize = 0.0,
       this.textWeight = FontWeight.w500,
