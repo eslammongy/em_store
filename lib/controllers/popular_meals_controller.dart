@@ -61,6 +61,11 @@ class PopularMealsController extends GetxController {
   }
 
   void addInCart(MealModel mealModel) {
-    _cartController.addItemInCart(mealModel, _quantity);
+    if (_quantity > 0) {
+      _cartController.addItemInCart(mealModel, _quantity);
+    } else {
+       displaySnackBarCart(
+          "Adding In Cart", "please add at least one item to adding in cart");
+    }
   }
 }
