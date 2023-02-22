@@ -65,7 +65,16 @@ class PopularMealsItemsDetails extends StatelessWidget {
                       child: const AppIcons(
                           iconData: Icons.arrow_back_ios_new_rounded)),
                   GetBuilder<PopularMealsController>(builder: (controller) {
-                    return Stack(children:[AppIcons(iconData: Icons.shopping_cart_outlined)
+                    return Stack(children: [
+                      const AppIcons(iconData: Icons.shopping_cart_outlined),
+                      Get.find<PopularMealsController>().totalCartItems >= 1
+                          ? const AppIcons(
+                              iconData: Icons.circle,
+                              size: 20,
+                              iconColor: Colors.transparent,
+                              iconBackground: AppColors.mainColor,
+                            )
+                          : Container()
                     ]);
                   })
                 ],
@@ -84,8 +93,8 @@ class PopularMealsItemsDetails extends StatelessWidget {
                       boxShadow: const [
                         BoxShadow(
                           color: Color(0xC3CDCDCD),
-                          blurRadius: 20,
-                          spreadRadius: 8,
+                          blurRadius: 10,
+                          spreadRadius: 2,
                         )
                       ],
                       borderRadius: BorderRadius.only(
@@ -125,11 +134,13 @@ class PopularMealsItemsDetails extends StatelessWidget {
                 bottom: Dimensions.spaceHeight30,
                 left: Dimensions.spaceWidth20,
                 right: Dimensions.spaceWidth20),
+            margin: EdgeInsets.only(
+                bottom: Dimensions.spaceHeight10,
+                left: Dimensions.spaceWidth10,
+                right: Dimensions.spaceWidth10),
             decoration: BoxDecoration(
                 color: AppColors.mainGreyColor,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(Dimensions.cardRadius30),
-                    topRight: Radius.circular(Dimensions.cardRadius30))),
+                borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -188,7 +199,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                         controller.addInCart(selectedMeal);
                       },
                       child: HeadLineText(
-                        text: "\$ ${selectedMeal.price} | Add To Cart",
+                        text: "\$${selectedMeal.price} - Add To Cart",
                         textColor: Colors.white,
                       ),
                     ),
