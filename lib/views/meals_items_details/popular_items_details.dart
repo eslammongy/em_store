@@ -27,7 +27,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
     var selectedMeal =
         Get.find<PopularMealsController>().popularProductsList[mealId];
     Get.find<PopularMealsController>()
-        .initMealsItems(Get.find<CartController>());
+        .initMealsItems(selectedMeal, Get.find<CartController>());
 
     return Scaffold(
       backgroundColor: Colors.white,

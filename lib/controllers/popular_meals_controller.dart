@@ -54,17 +54,20 @@ class PopularMealsController extends GetxController {
     }
   }
 
-  void initMealsItems(CartController cartController) {
+  void initMealsItems(MealModel mealModel, CartController cartController) {
     _quantity = 0;
     _inCartItems = 0;
     _cartController = cartController;
+    var exist = false;
+    exist = _cartController.checkItemExistInCart(mealModel);
   }
 
   void addInCart(MealModel mealModel) {
     if (_quantity > 0) {
       _cartController.addItemInCart(mealModel, _quantity);
+      _quantity = 0;
     } else {
-       displaySnackBarCart(
+      displaySnackBarCart(
           "Adding In Cart", "please add at least one item to adding in cart");
     }
   }

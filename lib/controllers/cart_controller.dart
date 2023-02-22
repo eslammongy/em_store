@@ -10,19 +10,19 @@ class CartController extends GetxController {
 
   CartController({required this.cartRepo});
   Map<int, CartModel> _cartItems = {};
+  Map<int, CartModel> get cartItems => _cartItems;
 
   void addItemInCart(MealModel mealModel, int quantity) {
     if (_cartItems.containsKey(mealModel.id)) {
       _cartItems.update(mealModel.id!, (value) {
-          return CartModel(
-              id: value.id,
-              name: value.name,
-              price: value.price,
-              img: value.img,
-              quantity: value.quantity! + quantity,
-              isExist: true,
-              addingTime: DateTime.now().toString());
-        
+        return CartModel(
+            id: value.id,
+            name: value.name,
+            price: value.price,
+            img: value.img,
+            quantity: value.quantity! + quantity,
+            isExist: true,
+            addingTime: DateTime.now().toString());
       });
     } else {
       _cartItems.putIfAbsent(mealModel.id!, () {
@@ -35,6 +35,14 @@ class CartController extends GetxController {
             isExist: true,
             addingTime: DateTime.now().toString());
       });
+    }
+  }
+
+  bool checkItemExistInCart(MealModel mealModel) {
+    if (_cartItems.containsKey(mealModel.id)) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
