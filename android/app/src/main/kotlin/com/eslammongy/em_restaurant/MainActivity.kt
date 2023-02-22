@@ -1,4 +1,4 @@
-package com.example.em_store
+package com.eslammongy.em_restaurant
 
 import io.flutter.embedding.android.FlutterActivity
 
