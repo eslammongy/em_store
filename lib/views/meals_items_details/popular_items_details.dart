@@ -64,7 +64,10 @@ class PopularMealsItemsDetails extends StatelessWidget {
                       },
                       child: const AppIcons(
                           iconData: Icons.arrow_back_ios_new_rounded)),
-                  const AppIcons(iconData: Icons.shopping_cart_outlined)
+                  GetBuilder<PopularMealsController>(builder: (controller) {
+                    return Stack(children:[AppIcons(iconData: Icons.shopping_cart_outlined)
+                    ]);
+                  })
                 ],
               )),
           Positioned(

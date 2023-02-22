@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color textColor = Color(0xFF515151);
-  static const Color mainColor = Color.fromARGB(255, 255, 119, 0);
+  static const Color mainColor = Color(0xE8F37201);
   static const Color iconsColor = Color(0XFFffd28d);
   static const Color buttonBGColor = Color(0XFFf7f6f4);
   static const Color titleColor = Color(0xFF323232);
