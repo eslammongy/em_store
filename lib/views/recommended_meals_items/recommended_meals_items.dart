@@ -38,7 +38,7 @@ class RecommendedItems extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(Dimensions.cardRadius20),
                         topRight: Radius.circular(Dimensions.cardRadius20)),
-                    boxShadow: []),
+                   ),
                 child: Center(
                   child: HeadLineText(
                     text: 'Random Text',

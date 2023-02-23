@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../helper/utils/colors.dart';
+import '../models/cart_model.dart';
 
 class PopularMealsController extends GetxController {
   final PopularMealsRepo popularProductRepo;
@@ -78,5 +79,9 @@ class PopularMealsController extends GetxController {
 
   int get totalCartItems {
     return _cartController.totalQuantity;
+  }
+
+  List<CartModel> get getCartItems {
+    return _cartController.getCartItems;
   }
 }

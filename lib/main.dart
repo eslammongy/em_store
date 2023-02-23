@@ -24,11 +24,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue, scaffoldBackgroundColor: Colors.white),
       home: const CartItemScreen(),
       // initialRoute: RoutesHelper.initialRoute,
-     // getPages: RoutesHelper.routes,
+      // getPages: RoutesHelper.routes,
     );
   }
 }
