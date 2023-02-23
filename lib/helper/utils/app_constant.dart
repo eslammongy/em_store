@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:flutter/foundation.dart';
+
 class AppConstant {
   static const String APP_NAME = "Store";
   static const int APP_VERSION = 1;

@@ -69,6 +69,7 @@ class PopularMealsController extends GetxController {
     _cartController.addItemInCart(mealModel, _quantity);
     _quantity = 0;
     _inCartItems = _cartController.getQuantity(mealModel);
+    update();
   }
 
   int get totalCartItems {

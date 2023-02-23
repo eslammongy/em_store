@@ -68,11 +68,28 @@ class PopularMealsItemsDetails extends StatelessWidget {
                     return Stack(children: [
                       const AppIcons(iconData: Icons.shopping_cart_outlined),
                       Get.find<PopularMealsController>().totalCartItems >= 1
-                          ? const AppIcons(
-                              iconData: Icons.circle,
-                              size: 20,
-                              iconColor: Colors.transparent,
-                              iconBackground: AppColors.mainColor,
+                          ? const Positioned(
+                              right: 0,
+                              top: 0,
+                              child: AppIcons(
+                                iconData: Icons.circle,
+                                size: 20,
+                                iconColor: Colors.transparent,
+                                iconBackground: AppColors.mainColor,
+                              ),
+                            )
+                          : Container(),
+                      Get.find<PopularMealsController>().totalCartItems >= 1
+                          ? Positioned(
+                              right: 5,
+                              top: 2,
+                              child: Text(
+                                "${Get.find<PopularMealsController>().totalCartItems}",
+                                style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.iconsBkColor),
+                              ),
                             )
                           : Container()
                     ]);
@@ -139,7 +156,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                 left: Dimensions.spaceWidth10,
                 right: Dimensions.spaceWidth10),
             decoration: BoxDecoration(
-                color: AppColors.mainGreyColor,
+                color: AppColors.iconsBkColor,
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,7 +168,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                         left: Dimensions.spaceWidth20,
                         right: Dimensions.spaceWidth20),
                     decoration: BoxDecoration(
-                        color: AppColors.iconsBkColor,
+                        color: AppColors.buttonBGColor,
                         borderRadius:
                             BorderRadius.circular(Dimensions.cardRadius20)),
                     child: Row(
