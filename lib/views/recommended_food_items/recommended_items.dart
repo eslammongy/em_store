@@ -44,34 +44,40 @@ class RecommendedItems extends StatelessWidget {
                       ),
                     ),
                     GetBuilder<PopularMealsController>(builder: (controller) {
-                      return Stack(children: [
-                        const AppIcons(iconData: Icons.shopping_cart_outlined),
-                        Get.find<PopularMealsController>().totalCartItems >= 1
-                            ? const Positioned(
-                                right: 0,
-                                top: 0,
-                                child: AppIcons(
-                                  iconData: Icons.circle,
-                                  size: 20,
-                                  iconColor: Colors.transparent,
-                                  iconBackground: AppColors.mainColor,
-                                ),
-                              )
-                            : Container(),
-                        Get.find<PopularMealsController>().totalCartItems >= 1
-                            ? Positioned(
-                                right: 5,
-                                top: 2,
-                                child: Text(
-                                  "${Get.find<PopularMealsController>().totalCartItems}",
-                                  style: const TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.iconsBkColor),
-                                ),
-                              )
-                            : Container()
-                      ]);
+                      return GestureDetector(
+                        onTap: () {
+                          Get.toNamed(RoutesHelper.cartItemScreen);
+                        },
+                        child: Stack(children: [
+                          const AppIcons(
+                              iconData: Icons.shopping_cart_outlined),
+                          Get.find<PopularMealsController>().totalCartItems >= 1
+                              ? const Positioned(
+                                  right: 0,
+                                  top: 0,
+                                  child: AppIcons(
+                                    iconData: Icons.circle,
+                                    size: 20,
+                                    iconColor: Colors.transparent,
+                                    iconBackground: AppColors.mainColor,
+                                  ),
+                                )
+                              : Container(),
+                          Get.find<PopularMealsController>().totalCartItems >= 1
+                              ? Positioned(
+                                  right: 5,
+                                  top: 2,
+                                  child: Text(
+                                    "${Get.find<PopularMealsController>().totalCartItems}",
+                                    style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.iconsBkColor),
+                                  ),
+                                )
+                              : Container()
+                        ]),
+                      );
                     })
                   ]),
               bottom: PreferredSize(

@@ -12,7 +12,7 @@ class CustomImageBox extends StatelessWidget {
       borderRadius: BorderRadius.circular(15),
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
         progressIndicatorBuilder: (context, url, progress) {
           return const Center(child: CustomCircularProgress());
         },
