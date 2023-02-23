@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
+import 'package:em_store/helper/routes_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -68,14 +69,19 @@ class PopularMealsItemsDetails extends StatelessWidget {
                     return Stack(children: [
                       const AppIcons(iconData: Icons.shopping_cart_outlined),
                       Get.find<PopularMealsController>().totalCartItems >= 1
-                          ? const Positioned(
+                          ? Positioned(
                               right: 0,
                               top: 0,
-                              child: AppIcons(
-                                iconData: Icons.circle,
-                                size: 20,
-                                iconColor: Colors.transparent,
-                                iconBackground: AppColors.mainColor,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(RoutesHelper.cartItemScreen);
+                                },
+                                child: const AppIcons(
+                                  iconData: Icons.circle,
+                                  size: 20,
+                                  iconColor: Colors.transparent,
+                                  iconBackground: AppColors.mainColor,
+                                ),
                               ),
                             )
                           : Container(),

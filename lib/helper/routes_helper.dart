@@ -1,4 +1,5 @@
 import 'package:em_store/main.dart';
+import 'package:em_store/views/cart/cart_items_screen.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/splash/splash_screen.dart';
 import 'package:em_store/views/widgets/recommend_meals_listitem.dart';
@@ -18,6 +19,10 @@ class RoutesHelper {
   static const String recommendedMealDetails = "/recommendedMealDetails";
   static String getRecommendedMealDetails(int mealID) =>
       "$recommendedMealDetails?mealId=$mealID";
+
+  static const String cartItemScreen = "/cartItemScreen";
+
+
 
   static List<GetPage> routes = [
     GetPage(name: initialRoute, page: () => const SplashScreen()),
@@ -39,6 +44,7 @@ class RoutesHelper {
             mealId: int.parse(mealId!),
           );
         },
-        transition: Transition.fadeIn)
+        transition: Transition.fadeIn),
+        GetPage(name: cartItemScreen, page: (() => const CartItemScreen()))
   ];
 }

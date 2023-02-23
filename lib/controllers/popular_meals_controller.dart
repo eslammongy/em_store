@@ -44,6 +44,10 @@ class PopularMealsController extends GetxController {
   int checkQuantity(int quantity) {
     if ((_inCartItems + quantity) < 0) {
       displaySnackBarCart("Cart Items", "Your cart is already empty !");
+      if (_inCartItems > 0) {
+        _quantity = _inCartItems;
+        return _quantity;
+      }
       return 0;
     } else if ((_inCartItems + quantity) > 20) {
       displaySnackBarCart("Cart Items",
