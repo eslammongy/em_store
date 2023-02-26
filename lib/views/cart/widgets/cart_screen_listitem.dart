@@ -57,7 +57,7 @@ class CartScreenListItem extends StatelessWidget {
                   children: [
                     HeadLineText(
                       text: "${cartModel.name}",
-                      textSize: 20,
+                      textSize: 18,
                       textWeight: FontWeight.w600,
                     ),
                     SmallBodyText(text: "${cartModel.addingTime}"),
@@ -69,6 +69,7 @@ class CartScreenListItem extends StatelessWidget {
                           textColor: Colors.orangeAccent,
                         ),
                         Container(
+                          margin: const EdgeInsets.only(right: 10),
                           padding: EdgeInsets.symmetric(
                               vertical: Dimensions.spaceHeight10,
                               horizontal: Dimensions.spaceWidth10),

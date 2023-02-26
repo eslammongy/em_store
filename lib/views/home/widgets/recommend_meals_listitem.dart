@@ -2,10 +2,10 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
+import 'package:em_store/data/models/meals_model.dart';
 import 'package:em_store/views/widgets/custom_circlur_progress.dart';
 import 'package:flutter/material.dart';
 
-import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/views/widgets/head_text.dart';
 import 'package:em_store/views/widgets/small_body_text.dart';
 import 'package:get/get.dart';
@@ -16,11 +16,11 @@ import '../../../core/utils/dimensions.dart';
 import '../../widgets/icon_and_text_widget.dart';
 
 class RecommendedMealsItem extends StatelessWidget {
-  RecommendedMealsController controller;
+  MealModel mealModel;
   int index;
   RecommendedMealsItem({
     Key? key,
-    required this.controller,
+    required this.mealModel,
     required this.index,
   }) : super(key: key);
 
@@ -52,7 +52,7 @@ class RecommendedMealsItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 child: CachedNetworkImage(
                   imageUrl:
-                      "${AppConstant.BASE_URL}uploads/${controller.recommendedProductsList[index].img!}",
+                      "${AppConstant.BASE_URL}uploads/${mealModel.img!}",
                   fit: BoxFit.fill,
                   progressIndicatorBuilder: (context, url, progress) {
                     return const Center(child: CustomCircularProgress());
@@ -91,16 +91,14 @@ class RecommendedMealsItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         HeadLineText(
-                            text: controller
-                                .recommendedProductsList[index].name!),
+                            text: mealModel.name!),
                         SizedBox(
                           height: Dimensions.spaceHeight10,
                         ),
                         SmallBodyText(
                             maxLines: 2,
                             
-                            text: controller
-                                .recommendedProductsList[index].description!),
+                            text: mealModel.description!),
                         SizedBox(
                           height: Dimensions.spaceHeight10,
                         ),

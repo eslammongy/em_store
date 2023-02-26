@@ -118,7 +118,8 @@ class _HomePageBodyState extends State<HomePageBody> {
                   itemBuilder: (context, index) {
                     // build list layout item view
                     return RecommendedMealsItem(
-                      controller: recommendedController,
+                      mealModel:
+                          recommendedController.recommendedProductsList[index],
                       index: index,
                     );
                   })
