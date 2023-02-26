@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:em_store/helper/routes_helper.dart';
-import 'package:em_store/helper/utils/colors.dart';
+import 'package:em_store/core/helper/routes_helper.dart';
+import 'package:em_store/core/utils/colors.dart';
 import 'package:em_store/views/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

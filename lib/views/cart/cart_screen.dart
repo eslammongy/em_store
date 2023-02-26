@@ -1,29 +1,22 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/controllers/cart_controller.dart';
-import 'package:em_store/helper/utils/dimensions.dart';
+import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/views/widgets/app_icons.dart';
-import 'package:em_store/views/widgets/cart_screen_listitem.dart';
-import 'package:em_store/views/widgets/custom_image_box.dart';
-import 'package:em_store/views/widgets/head_text.dart';
-import 'package:em_store/views/widgets/small_body_text.dart';
+import 'package:em_store/views/cart/widgets/cart_screen_listitem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
-import '../../helper/routes_helper.dart';
-import '../../helper/utils/app_constant.dart';
-import '../../helper/utils/colors.dart';
-import '../widgets/custom_circlur_progress.dart';
+import '../../core/helper/routes_helper.dart';
+import '../../core/utils/colors.dart';
 
-class CartItemScreen extends StatefulWidget {
-  const CartItemScreen({super.key});
+class CartScreen extends StatefulWidget {
+  const CartScreen({super.key});
 
   @override
-  State<CartItemScreen> createState() => _CartItemScreenState();
+  State<CartScreen> createState() => _CartScreenState();
 }
 
-class _CartItemScreenState extends State<CartItemScreen> {
+class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

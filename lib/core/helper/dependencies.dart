@@ -4,10 +4,10 @@ import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/data/api/api_client.dart';
 import 'package:em_store/data/repository/cart_repo.dart';
 import 'package:em_store/data/repository/popular_meals_repo.dart';
-import 'package:em_store/helper/utils/app_constant.dart';
+import 'package:em_store/core/utils/app_constant.dart';
 import 'package:get/get.dart';
 
-import '../data/repository/recommended_meals_repo.dart';
+import '../../data/repository/recommended_meals_repo.dart';
 
 Future<void> init() async {
   // init api client

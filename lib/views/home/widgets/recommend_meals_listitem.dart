@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:em_store/helper/routes_helper.dart';
+import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:em_store/views/widgets/custom_circlur_progress.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +10,10 @@ import 'package:em_store/views/widgets/head_text.dart';
 import 'package:em_store/views/widgets/small_body_text.dart';
 import 'package:get/get.dart';
 
-import '../../helper/utils/app_constant.dart';
-import '../../helper/utils/colors.dart';
-import '../../helper/utils/dimensions.dart';
-import 'icon_and_icon_widget.dart';
+import '../../../core/utils/app_constant.dart';
+import '../../../core/utils/colors.dart';
+import '../../../core/utils/dimensions.dart';
+import '../../widgets/icon_and_text_widget.dart';
 
 class RecommendedMealsItem extends StatelessWidget {
   RecommendedMealsController controller;

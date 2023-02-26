@@ -1,12 +1,9 @@
-import 'package:em_store/main.dart';
-import 'package:em_store/views/cart/cart_items_screen.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/splash/splash_screen.dart';
-import 'package:em_store/views/widgets/recommend_meals_listitem.dart';
 import 'package:get/get.dart';
-
-import '../views/meals_items_details/popular_items_details.dart';
-import '../views/recommended_food_items/recommended_items.dart';
+import '../../views/cart/cart_screen.dart';
+import '../../views/popular_meals_details/popular_meals_details.dart';
+import '../../views/recommended_meals_details/recommended_meals_details.dart';
 
 class RoutesHelper {
   static const String initialRoute = "/";
@@ -20,9 +17,7 @@ class RoutesHelper {
   static String getRecommendedMealDetails(int mealID) =>
       "$recommendedMealDetails?mealId=$mealID";
 
-  static const String cartItemScreen = "/cartItemScreen";
-
-
+  static const String cartScreen = "/CartScreen";
 
   static List<GetPage> routes = [
     GetPage(name: initialRoute, page: () => const SplashScreen()),
@@ -31,7 +26,7 @@ class RoutesHelper {
         name: popularMealDetails,
         page: () {
           var mealId = Get.parameters['mealId'];
-          return PopularMealsItemsDetails(
+          return PopularMealsDetails(
             mealId: int.parse(mealId!),
           );
         },
@@ -40,11 +35,11 @@ class RoutesHelper {
         name: recommendedMealDetails,
         page: () {
           var mealId = Get.parameters['mealId'];
-          return RecommendedItems(
+          return RecommendedMealsDetails(
             mealId: int.parse(mealId!),
           );
         },
         transition: Transition.fadeIn),
-        GetPage(name: cartItemScreen, page: (() => const CartItemScreen()))
+    GetPage(name: cartScreen, page: (() => const CartScreen()))
   ];
 }

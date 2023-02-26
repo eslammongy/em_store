@@ -1,4 +1,4 @@
-import 'package:em_store/models/meals_model.dart';
+import 'package:em_store/data/models/meals_model.dart';
 import 'package:get/get.dart';
 
 import '../data/repository/recommended_meals_repo.dart';

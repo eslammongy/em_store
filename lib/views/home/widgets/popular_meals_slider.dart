@@ -1,16 +1,16 @@
 // creating slider container
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:em_store/helper/routes_helper.dart';
+import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../models/meals_model.dart';
-import '../../../helper/utils/app_constant.dart';
-import '../../../helper/utils/dimensions.dart';
+import '../../../data/models/meals_model.dart';
+import '../../../core/utils/app_constant.dart';
+import '../../../core/utils/dimensions.dart';
 import '../../widgets/column_rating_card.dart';
 import '../../widgets/custom_circlur_progress.dart';
 
-Widget buildPopularSliderItem(int index, MealModel mealModel, Matrix4 matrix4) {
+Widget buildPopularSlider(int index, MealModel mealModel, Matrix4 matrix4) {
   return Transform(
     transform: matrix4,
     child: GestureDetector(

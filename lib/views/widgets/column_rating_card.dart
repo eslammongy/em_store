@@ -1,10 +1,10 @@
 import 'package:em_store/views/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../helper/utils/colors.dart';
-import '../../helper/utils/dimensions.dart';
+import '../../core/utils/colors.dart';
+import '../../core/utils/dimensions.dart';
 import 'head_text.dart';
-import 'icon_and_icon_widget.dart';
+import 'icon_and_text_widget.dart';
 
 class ReusableColumnCard extends StatelessWidget {
   final String cardTitle;

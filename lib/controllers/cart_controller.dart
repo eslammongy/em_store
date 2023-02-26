@@ -1,9 +1,9 @@
-import 'package:em_store/helper/utils/helper_fun.dart';
-import 'package:em_store/models/meals_model.dart';
+import 'package:em_store/core/utils/helper_fun.dart';
+import 'package:em_store/data/models/meals_model.dart';
 import 'package:get/get.dart';
 
 import '../data/repository/cart_repo.dart';
-import '../models/cart_model.dart';
+import '../data/models/cart_model.dart';
 
 class CartController extends GetxController {
   final CartRepo cartRepo;

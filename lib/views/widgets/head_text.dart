@@ -1,5 +1,5 @@
-import 'package:em_store/helper/utils/colors.dart';
-import 'package:em_store/helper/utils/dimensions.dart';
+import 'package:em_store/core/utils/colors.dart';
+import 'package:em_store/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

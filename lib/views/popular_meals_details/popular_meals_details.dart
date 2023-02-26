@@ -1,24 +1,24 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
-import 'package:em_store/helper/routes_helper.dart';
+import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:em_store/helper/utils/colors.dart';
-import 'package:em_store/helper/utils/dimensions.dart';
+import 'package:em_store/core/utils/colors.dart';
+import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/widgets/app_icons.dart';
 import 'package:em_store/views/widgets/column_rating_card.dart';
 import 'package:em_store/views/widgets/expanded_text.dart';
 
-import '../../helper/utils/app_constant.dart';
+import '../../core/utils/app_constant.dart';
 import '../widgets/custom_circlur_progress.dart';
 import '../widgets/head_text.dart';
 
-class PopularMealsItemsDetails extends StatelessWidget {
+class PopularMealsDetails extends StatelessWidget {
   final int mealId;
-  const PopularMealsItemsDetails({
+  const PopularMealsDetails({
     Key? key,
     required this.mealId,
   }) : super(key: key);
@@ -74,7 +74,7 @@ class PopularMealsItemsDetails extends StatelessWidget {
                               top: 0,
                               child: GestureDetector(
                                 onTap: () {
-                                  Get.toNamed(RoutesHelper.cartItemScreen);
+                                  Get.toNamed(RoutesHelper.cartScreen);
                                 },
                                 child: const AppIcons(
                                   iconData: Icons.circle,

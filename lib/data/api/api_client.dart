@@ -1,4 +1,4 @@
-import 'package:em_store/helper/utils/app_constant.dart';
+import 'package:em_store/core/utils/app_constant.dart';
 import 'package:get/get.dart';
 
 class ApiClient extends GetConnect implements GetxService {

@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
-import 'package:em_store/helper/routes_helper.dart';
-import 'package:em_store/helper/utils/colors.dart';
-import 'package:em_store/helper/utils/dimensions.dart';
+import 'package:em_store/core/helper/routes_helper.dart';
+import 'package:em_store/core/utils/colors.dart';
+import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/views/widgets/app_icons.dart';
 import 'package:em_store/views/widgets/expanded_text.dart';
 import 'package:em_store/views/widgets/head_text.dart';
@@ -11,12 +11,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/cart_controller.dart';
-import '../../helper/utils/app_constant.dart';
+import '../../core/utils/app_constant.dart';
 import '../widgets/custom_circlur_progress.dart';
 
-class RecommendedItems extends StatelessWidget {
+class RecommendedMealsDetails extends StatelessWidget {
   final int mealId;
-  const RecommendedItems({super.key, required this.mealId});
+  const RecommendedMealsDetails({super.key, required this.mealId});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class RecommendedItems extends StatelessWidget {
                     GetBuilder<PopularMealsController>(builder: (controller) {
                       return GestureDetector(
                         onTap: () {
-                          Get.toNamed(RoutesHelper.cartItemScreen);
+                          Get.toNamed(RoutesHelper.cartScreen);
                         },
                         child: Stack(children: [
                           const AppIcons(

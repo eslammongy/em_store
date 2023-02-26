@@ -1,12 +1,12 @@
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/data/repository/popular_meals_repo.dart';
-import 'package:em_store/helper/utils/helper_fun.dart';
-import 'package:em_store/models/meals_model.dart';
+import 'package:em_store/core/utils/helper_fun.dart';
+import 'package:em_store/data/models/meals_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../helper/utils/colors.dart';
-import '../models/cart_model.dart';
+import '../core/utils/colors.dart';
+import '../data/models/cart_model.dart';
 
 class PopularMealsController extends GetxController {
   final PopularMealsRepo popularProductRepo;

@@ -4,12 +4,12 @@ import 'package:get/get.dart';
 
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
-import 'package:em_store/helper/utils/colors.dart';
-import 'package:em_store/helper/utils/dimensions.dart';
-import 'package:em_store/views/home/widgets/home_screen_widgets.dart';
+import 'package:em_store/core/utils/colors.dart';
+import 'package:em_store/core/utils/dimensions.dart';
+import 'package:em_store/views/home/widgets/popular_meals_slider.dart';
 import 'package:em_store/views/widgets/custom_circlur_progress.dart';
 import 'package:em_store/views/widgets/head_text.dart';
-import 'package:em_store/views/widgets/recommend_meals_listitem.dart';
+import 'package:em_store/views/home/widgets/recommend_meals_listitem.dart';
 import 'package:em_store/views/widgets/small_body_text.dart';
 
 class HomePageBody extends StatefulWidget {
@@ -58,7 +58,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                       controller: pageController,
                       itemCount: popularProducts.popularProductsList.length,
                       itemBuilder: (context, position) {
-                        return buildPopularSliderItem(
+                        return buildPopularSlider(
                             position,
                             popularProducts.popularProductsList[position],
                             createMatrixTransform(position));

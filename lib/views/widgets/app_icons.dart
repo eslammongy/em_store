@@ -1,4 +1,4 @@
-import 'package:em_store/helper/utils/colors.dart';
+import 'package:em_store/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppIcons extends StatelessWidget {

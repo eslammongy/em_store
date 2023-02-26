@@ -1,11 +1,10 @@
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
-import 'package:em_store/helper/routes_helper.dart';
-import 'package:em_store/views/cart/cart_items_screen.dart';
+import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'views/splash/splash_screen.dart';
-import 'helper/dependencies.dart' as helper;
+import 'core/helper/dependencies.dart' as helper;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
