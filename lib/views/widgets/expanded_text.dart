@@ -40,7 +40,7 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
               text: firstHalf,
               maxLines: 3,
               lineHeight: 1.4,
-              textColor: AppColors.mainBlackColor,
+              textColor: AppColors.mainGreyColor,
               textSize: Dimensions.headFontSize16,
             )
           : Column(

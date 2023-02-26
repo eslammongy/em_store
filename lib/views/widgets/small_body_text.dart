@@ -27,7 +27,7 @@ class SmallBodyText extends StatelessWidget {
           fontSize: textSize,
           height: lineHeight,
           fontWeight: FontWeight.w400,
-          fontFamily: 'Montserrat'),
+          fontFamily: 'Roboto'),
     );
   }
 }

@@ -28,7 +28,7 @@ class HeadLineText extends StatelessWidget {
           color: textColor,
           fontSize: textSize == 0 ? Dimensions.headFontSize : textSize,
           fontWeight: textWeight,
-          fontFamily: 'Montserrat'),
+          fontFamily: 'Roboto'),
     );
   }
 }
