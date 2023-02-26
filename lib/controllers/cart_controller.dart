@@ -1,4 +1,4 @@
-import 'package:em_store/core/utils/helper_fun.dart';
+import 'package:em_store/core/helper/helper_fun.dart';
 import 'package:em_store/data/models/meals_model.dart';
 import 'package:get/get.dart';
 

@@ -1,6 +1,6 @@
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/data/repository/popular_meals_repo.dart';
-import 'package:em_store/core/utils/helper_fun.dart';
+import 'package:em_store/core/helper/helper_fun.dart';
 import 'package:em_store/data/models/meals_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
