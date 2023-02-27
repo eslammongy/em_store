@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
+import 'package:em_store/core/helper/helper_fun.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -66,39 +67,44 @@ class PopularMealsDetails extends StatelessWidget {
                       child: const AppIcons(
                           iconData: Icons.arrow_back_ios_new_rounded)),
                   GetBuilder<PopularMealsController>(builder: (controller) {
-                    return Stack(children: [
-                      const AppIcons(iconData: Icons.shopping_cart_outlined),
-                      Get.find<PopularMealsController>().totalCartItems >= 1
-                          ? Positioned(
-                              right: 0,
-                              top: 0,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Get.toNamed(RoutesHelper.cartScreen);
-                                },
-                                child: const AppIcons(
+                    return GestureDetector(
+                      onTap: () {
+                        if (controller.totalCartItems >= 1) {
+                          Get.toNamed(RoutesHelper.cartScreen);
+                        } else {
+                          displaySnackBarCart("Cart Info",
+                              "Your cart is empty, please add first.");
+                        }
+                      },
+                      child: Stack(children: [
+                        const AppIcons(iconData: Icons.shopping_cart_outlined),
+                        Get.find<PopularMealsController>().totalCartItems >= 1
+                            ? const Positioned(
+                                right: 0,
+                                top: 0,
+                                child: AppIcons(
                                   iconData: Icons.circle,
                                   size: 20,
                                   iconColor: Colors.transparent,
                                   iconBackground: AppColors.mainColor,
                                 ),
-                              ),
-                            )
-                          : Container(),
-                      Get.find<PopularMealsController>().totalCartItems >= 1
-                          ? Positioned(
-                              right: 5,
-                              top: 2,
-                              child: Text(
-                                "${Get.find<PopularMealsController>().totalCartItems}",
-                                style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.iconsBkColor),
-                              ),
-                            )
-                          : Container()
-                    ]);
+                              )
+                            : Container(),
+                        Get.find<PopularMealsController>().totalCartItems >= 1
+                            ? Positioned(
+                                right: 5,
+                                top: 2,
+                                child: Text(
+                                  "${Get.find<PopularMealsController>().totalCartItems}",
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColors.iconsBkColor),
+                                ),
+                              )
+                            : Container()
+                      ]),
+                    );
                   })
                 ],
               )),

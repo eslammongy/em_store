@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/cart_controller.dart';
+import '../../core/helper/helper_fun.dart';
 import '../../core/utils/app_constant.dart';
 import '../widgets/custom_circlur_progress.dart';
 
@@ -46,7 +47,12 @@ class RecommendedMealsDetails extends StatelessWidget {
                     GetBuilder<PopularMealsController>(builder: (controller) {
                       return GestureDetector(
                         onTap: () {
-                          Get.toNamed(RoutesHelper.cartScreen);
+                          if (controller.totalCartItems >= 1) {
+                            Get.toNamed(RoutesHelper.cartScreen);
+                          } else {
+                            displaySnackBarCart("Cart Info",
+                                "Your cart is empty, please add first.");
+                          }
                         },
                         child: Stack(children: [
                           const AppIcons(
