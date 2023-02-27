@@ -80,7 +80,8 @@ class CartScreenListItem extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  // controller.setQuantity(false);
+                                  cartController.addItemInCart(
+                                      cartModel.mealModel!, -1);
                                 },
                                 child: const Icon(
                                   Icons.remove,
@@ -90,13 +91,15 @@ class CartScreenListItem extends StatelessWidget {
                               SizedBox(
                                 width: Dimensions.spaceWidth10 / 2,
                               ),
-                              HeadLineText(text: "0".toString()),
+                              HeadLineText(
+                                  text: "${cartModel.quantity}".toString()),
                               SizedBox(
                                 width: Dimensions.spaceWidth10 / 2,
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  // controller.setQuantity(true);
+                                  cartController.addItemInCart(
+                                      cartModel.mealModel!, 1);
                                 },
                                 child: const Icon(
                                   Icons.add,

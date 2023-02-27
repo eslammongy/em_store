@@ -24,7 +24,8 @@ class CartController extends GetxController {
             img: value.img,
             quantity: value.quantity! + quantity,
             isExist: true,
-            addingTime: DateTime.now().toString());
+            addingTime: DateTime.now().toString(),
+            mealModel: mealModel);
       });
 
       if (totalQuantity <= 0) {
@@ -40,13 +41,15 @@ class CartController extends GetxController {
               img: mealModel.img,
               quantity: quantity,
               isExist: true,
-              addingTime: DateTime.now().toString());
+              addingTime: DateTime.now().toString(),
+              mealModel: mealModel);
         });
       } else {
         displaySnackBarCart(
             "Adding In Cart", "please add at least one item to adding in cart");
       }
     }
+    update();
   }
 
   bool checkItemExistInCart(MealModel mealModel) {
