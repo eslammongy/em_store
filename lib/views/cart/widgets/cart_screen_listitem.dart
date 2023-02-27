@@ -1,6 +1,12 @@
 import 'package:em_store/controllers/cart_controller.dart';
+import 'package:em_store/data/models/meals_model.dart';
 import 'package:em_store/views/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../../controllers/popular_meals_controller.dart';
+import '../../../controllers/recommended_meals_controller.dart';
+import '../../../core/helper/routes_helper.dart';
 import '../../../core/utils/app_constant.dart';
 import '../../../core/utils/colors.dart';
 import '../../../core/utils/dimensions.dart';
@@ -38,13 +44,18 @@ class CartScreenListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-                padding: const EdgeInsets.all(5),
-                width: Dimensions.spaceWidth20 * 5,
-                height: Dimensions.spaceHeight20 * 5,
-                child: CustomImageBox(
-                    imageUrl:
-                        "${AppConstant.BASE_URL}uploads/${cartModel.img!}")),
+            GestureDetector(
+              onTap: () {
+                goBackFromCart(cartModel.mealModel!);
+              },
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  width: Dimensions.spaceWidth20 * 5,
+                  height: Dimensions.spaceHeight20 * 5,
+                  child: CustomImageBox(
+                      imageUrl:
+                          "${AppConstant.BASE_URL}uploads/${cartModel.img!}")),
+            ),
             SizedBox(
               width: Dimensions.spaceWidth10,
             ),
@@ -115,5 +126,20 @@ class CartScreenListItem extends StatelessWidget {
             ))
           ]),
     );
+  }
+
+  void goBackFromCart(MealModel mealModel) {
+    var popularIndex = Get.find<PopularMealsController>()
+        .popularProductsList
+        .indexOf(cartModel.mealModel!);
+
+    if (popularIndex >= 0) {
+      Get.toNamed(RoutesHelper.getPopularMealDetails(popularIndex));
+    } else {
+      var recommendedIndex = Get.find<RecommendedMealsController>()
+          .recommendedProductsList
+          .indexOf(cartModel.mealModel!);
+      Get.toNamed(RoutesHelper.getRecommendedMealDetails(recommendedIndex));
+    }
   }
 }
