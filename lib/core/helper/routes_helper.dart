@@ -1,3 +1,4 @@
+import 'package:em_store/views/dashboard/dashboard_screen.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/splash/splash_screen.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,7 @@ import '../../views/recommended_meals_details/recommended_meals_details.dart';
 
 class RoutesHelper {
   static const String initialRoute = "/";
+  static const String dashboardScreen = "/dashboardScreen";
   static const String mainHomeRoute = "/mainHomeRoute";
 
   static const String popularMealDetails = "/popularMealDetails";
@@ -22,6 +24,7 @@ static String getCartScreen() =>
       cartScreen;
   static List<GetPage> routes = [
     GetPage(name: initialRoute, page: () => const SplashScreen()),
+    GetPage(name: dashboardScreen, page: () => const DashboardScreen()),
     GetPage(name: mainHomeRoute, page: () => const MainHomePage()),
     GetPage(
         name: popularMealDetails,
