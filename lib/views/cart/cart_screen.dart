@@ -93,19 +93,18 @@ class _CartScreenState extends State<CartScreen> {
                   )))
         ],
       ),
-       bottomNavigationBar: GetBuilder<PopularMealsController>(
+      bottomNavigationBar: GetBuilder<CartController>(
         builder: (controller) {
           return Container(
             height: Dimensions.bottomBarHeight,
-            padding: EdgeInsets.only(
-                top: Dimensions.spaceHeight30,
-                bottom: Dimensions.spaceHeight30,
-                left: Dimensions.spaceWidth20,
-                right: Dimensions.spaceWidth20),
-            margin: EdgeInsets.only(
-                bottom: Dimensions.spaceHeight10,
-                left: Dimensions.spaceWidth10,
-                right: Dimensions.spaceWidth10),
+            padding: EdgeInsets.symmetric(
+              vertical: Dimensions.spaceHeight30,
+              horizontal: Dimensions.spaceWidth20,
+            ),
+            margin: EdgeInsets.symmetric(
+              vertical: Dimensions.spaceHeight10,
+              horizontal: Dimensions.spaceWidth20,
+            ),
             decoration: BoxDecoration(
                 color: AppColors.iconsBkColor,
                 borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
@@ -113,51 +112,18 @@ class _CartScreenState extends State<CartScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(
-                        top: Dimensions.spaceHeight20,
-                        bottom: Dimensions.spaceHeight20,
-                        left: Dimensions.spaceWidth20,
-                        right: Dimensions.spaceWidth20),
+                    padding: EdgeInsets.all(Dimensions.spaceWidth20),
                     decoration: BoxDecoration(
                         color: AppColors.buttonBGColor,
                         borderRadius:
-                            BorderRadius.circular(Dimensions.cardRadius20)),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            controller.setQuantity(false);
-                          },
-                          child: const Icon(
-                            Icons.remove,
-                            color: AppColors.mainBlackColor,
-                          ),
-                        ),
-                        SizedBox(
-                          width: Dimensions.spaceWidth10 / 2,
-                        ),
-                        HeadLineText(text: controller.inCartItems.toString()),
-                        SizedBox(
-                          width: Dimensions.spaceWidth10 / 2,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            controller.setQuantity(true);
-                          },
-                          child: const Icon(
-                            Icons.add,
-                            color: AppColors.mainBlackColor,
-                          ),
-                        )
-                      ],
-                    ),
+                            BorderRadius.circular(Dimensions.cardRadius30)),
+                    child:
+                        HeadLineText(text: "\$ ${controller.calcTotalAmount}"),
                   ),
                   Container(
-                    padding: EdgeInsets.only(
-                        top: Dimensions.spaceHeight20,
-                        bottom: Dimensions.spaceHeight20,
-                        left: Dimensions.spaceWidth20,
-                        right: Dimensions.spaceWidth20),
+                    padding: EdgeInsets.all(
+                      Dimensions.spaceHeight20,
+                    ),
                     decoration: BoxDecoration(
                         color: AppColors.mainColor,
                         borderRadius:
@@ -167,7 +133,7 @@ class _CartScreenState extends State<CartScreen> {
                         //controller.addInCart(selectedMeal);
                       },
                       child: HeadLineText(
-                        text: " Add To Cart",
+                        text: "Checkout",
                         textColor: Colors.white,
                       ),
                     ),
