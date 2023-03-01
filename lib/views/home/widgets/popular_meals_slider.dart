@@ -15,7 +15,7 @@ Widget buildPopularSlider(int index, MealModel mealModel, Matrix4 matrix4) {
     transform: matrix4,
     child: GestureDetector(
       onTap: () {
-        Get.toNamed(RoutesHelper.getPopularMealDetails(index));
+        Get.toNamed(RoutesHelper.getPopularMealDetails(index, "HomePage"));
       },
       child: Stack(
         children: [
@@ -70,7 +70,6 @@ Widget buildPopularSlider(int index, MealModel mealModel, Matrix4 matrix4) {
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: ReusableColumnCard(
                     cardTitle: mealModel.name!,
-                    
                   )),
             ),
           ),

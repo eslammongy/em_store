@@ -28,7 +28,7 @@ class RecommendedMealsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed(RoutesHelper.getRecommendedMealDetails(index));
+        Get.toNamed(RoutesHelper.getRecommendedMealDetails(index, "HomePage"));
       },
       child: Container(
         margin: EdgeInsets.only(
@@ -49,10 +49,9 @@ class RecommendedMealsItem extends StatelessWidget {
                 ],
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
-                  imageUrl:
-                      "${AppConstant.BASE_URL}uploads/${mealModel.img!}",
+                  imageUrl: "${AppConstant.BASE_URL}uploads/${mealModel.img!}",
                   fit: BoxFit.fill,
                   progressIndicatorBuilder: (context, url, progress) {
                     return const Center(child: CustomCircularProgress());
@@ -90,15 +89,12 @@ class RecommendedMealsItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        HeadLineText(
-                            text: mealModel.name!),
+                        HeadLineText(text: mealModel.name!),
                         SizedBox(
                           height: Dimensions.spaceHeight10,
                         ),
                         SmallBodyText(
-                            maxLines: 2,
-                            
-                            text: mealModel.description!),
+                            maxLines: 2, text: mealModel.description!),
                         SizedBox(
                           height: Dimensions.spaceHeight10,
                         ),

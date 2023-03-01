@@ -134,12 +134,12 @@ class CartScreenListItem extends StatelessWidget {
         .indexOf(cartModel.mealModel!);
 
     if (popularIndex >= 0) {
-      Get.toNamed(RoutesHelper.getPopularMealDetails(popularIndex));
+      Get.toNamed(RoutesHelper.getPopularMealDetails(popularIndex, "CartPage"));
     } else {
       var recommendedIndex = Get.find<RecommendedMealsController>()
           .recommendedProductsList
           .indexOf(cartModel.mealModel!);
-      Get.toNamed(RoutesHelper.getRecommendedMealDetails(recommendedIndex));
+      Get.toNamed(RoutesHelper.getRecommendedMealDetails(recommendedIndex, "CartPage"));
     }
   }
 }

@@ -10,15 +10,16 @@ class RoutesHelper {
   static const String mainHomeRoute = "/mainHomeRoute";
 
   static const String popularMealDetails = "/popularMealDetails";
-  static String getPopularMealDetails(int mealID) =>
-      "$popularMealDetails?mealId=$mealID";
+  static String getPopularMealDetails(int mealID, String pageName) =>
+      "$popularMealDetails?mealId=$mealID&page=$pageName";
 
   static const String recommendedMealDetails = "/recommendedMealDetails";
-  static String getRecommendedMealDetails(int mealID) =>
-      "$recommendedMealDetails?mealId=$mealID";
+  static String getRecommendedMealDetails(int mealID, String pageName) =>
+      "$recommendedMealDetails?mealId=$mealID&page=$pageName";
 
   static const String cartScreen = "/CartScreen";
-
+static String getCartScreen() =>
+      cartScreen;
   static List<GetPage> routes = [
     GetPage(name: initialRoute, page: () => const SplashScreen()),
     GetPage(name: mainHomeRoute, page: () => const MainHomePage()),
@@ -26,20 +27,22 @@ class RoutesHelper {
         name: popularMealDetails,
         page: () {
           var mealId = Get.parameters['mealId'];
+          var pageName = Get.parameters['page'];
           return PopularMealsDetails(
-            mealId: int.parse(mealId!),
-          );
+              mealId: int.parse(mealId!), pageName: pageName!);
         },
         transition: Transition.fadeIn),
     GetPage(
         name: recommendedMealDetails,
         page: () {
           var mealId = Get.parameters['mealId'];
+            var pageName = Get.parameters['page'];
           return RecommendedMealsDetails(
             mealId: int.parse(mealId!),
+             pageName: pageName!
           );
         },
         transition: Transition.fadeIn),
-    GetPage(name: cartScreen, page: (() => const CartScreen()))
+    GetPage(name: getCartScreen(), page: (() => const CartScreen()))
   ];
 }

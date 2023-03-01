@@ -3,6 +3,7 @@ import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/core/helper/helper_fun.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
+import 'package:em_store/views/cart/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,9 +20,11 @@ import '../widgets/head_text.dart';
 
 class PopularMealsDetails extends StatelessWidget {
   final int mealId;
+  final String pageName;
   const PopularMealsDetails({
     Key? key,
     required this.mealId,
+    required this.pageName,
   }) : super(key: key);
 
   @override
@@ -59,10 +62,14 @@ class PopularMealsDetails extends StatelessWidget {
               right: Dimensions.spaceWidth20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+              children: [
                   GestureDetector(
                       onTap: () {
-                        Get.to(() => const MainHomePage());
+                        if (pageName == "CartPage") {
+                          Get.toNamed(RoutesHelper.getCartScreen());
+                        } else {
+                          Get.toNamed(RoutesHelper.mainHomeRoute);
+                        }
                       },
                       child: const AppIcons(
                           iconData: Icons.arrow_back_ios_new_rounded)),
@@ -239,4 +246,5 @@ class PopularMealsDetails extends StatelessWidget {
       ),
     );
   }
+
 }

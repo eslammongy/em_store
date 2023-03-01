@@ -17,7 +17,8 @@ import '../widgets/custom_circlur_progress.dart';
 
 class RecommendedMealsDetails extends StatelessWidget {
   final int mealId;
-  const RecommendedMealsDetails({super.key, required this.mealId});
+  final String pageName;
+  const RecommendedMealsDetails({super.key, required this.mealId, required this.pageName});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,11 @@ class RecommendedMealsDetails extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed(RoutesHelper.mainHomeRoute);
+                        if (pageName == "CartPage") {
+                          Get.toNamed(RoutesHelper.getCartScreen());
+                        } else {
+                          Get.toNamed(RoutesHelper.mainHomeRoute);
+                        }
                       },
                       child: const AppIcons(
                         iconData: Icons.clear,
