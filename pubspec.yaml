@@ -36,7 +36,6 @@ dependencies:
   cached_network_image: ^3.2.3
   flutter:
     sdk: flutter
-  bottom_navy_bar: ^6.0.0
   get: ^4.6.5
 
 dev_dependencies:

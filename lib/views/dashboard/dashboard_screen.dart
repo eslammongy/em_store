@@ -1,9 +1,7 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:em_store/core/utils/colors.dart';
+import 'package:em_store/views/dashboard/widgets/bottom_nav_bar_items.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -13,11 +11,11 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  int _currentPage = 0;
+  int _selectedPage = 0;
   final List pages = [
     const MainHomePage(),
     Container(
-      child: const Center(child: Text("Page N2")),
+      child: Center(child: Text("Page N2")),
     ),
     Container(
       child: const Center(child: Text("Page N3")),
@@ -29,55 +27,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_currentPage],
-      bottomNavigationBar: BottomNavyBar(
-          selectedIndex: _currentPage,
-          showElevation: true,
-          itemCornerRadius: 24,
-          curve: Curves.easeIn,
-          onItemSelected: (index) => onTapNavClicked(index),
-          items: buildBottomNavBarItems()),
-    );
+        body: pages[_selectedPage],
+        bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: AppColors.mainColor,
+            unselectedItemColor: AppColors.mainGreyColor,
+            currentIndex: _selectedPage,
+            onTap: (value) {
+              onTapNavClicked(value);
+            },
+            items: buildBottomNavBarItems()));
   }
 
   void onTapNavClicked(int index) {
     setState(() {
-      _currentPage = index;
+      _selectedPage = index;
     });
-  }
-
-  buildBottomNavBarItems() {
-    return <BottomNavyBarItem>[
-      BottomNavyBarItem(
-        icon: const Icon(Icons.home_rounded),
-        title: const Text('Home'),
-        activeColor: AppColors.mainColor,
-        inactiveColor: AppColors.mainGreyColor,
-        textAlign: TextAlign.center,
-      ),
-      BottomNavyBarItem(
-        icon: const Icon(Icons.history_rounded),
-        title: const Text('History'),
-        activeColor: AppColors.mainColor,
-        textAlign: TextAlign.center,
-        inactiveColor: AppColors.mainGreyColor,
-      ),
-      BottomNavyBarItem(
-        icon: const Icon(Icons.shopping_cart_rounded),
-        title: const Text(
-          'Cart',
-        ),
-        activeColor: AppColors.mainColor,
-        inactiveColor: AppColors.mainGreyColor,
-        textAlign: TextAlign.center,
-      ),
-      BottomNavyBarItem(
-        icon: const Icon(Icons.person_rounded),
-        title: const Text('Profile'),
-        activeColor: AppColors.mainColor,
-        inactiveColor: AppColors.mainGreyColor,
-        textAlign: TextAlign.center,
-      ),
-    ];
   }
 }

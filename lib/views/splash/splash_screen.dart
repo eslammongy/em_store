@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:em_store/controllers/popular_meals_controller.dart';
+import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:em_store/core/utils/colors.dart';
 import 'package:em_store/views/widgets/head_text.dart';
@@ -13,35 +15,30 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
   late Timer timer;
+
+  late Animation<double> animation;
+  late AnimationController _animationController;
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      Get.toNamed(RoutesHelper.dashboardScreen);
-      timer.cancel();
-    });
+    loadResources();
+    initAnim();
+    navigateToDashboard();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff363636),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment
-                .bottomCenter, // 10% of the width, so there are ten blinds.
-            colors: [Color(0xFFF0F0F0), Colors.white], // red to yellow
-            tileMode: TileMode.repeated,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
+      backgroundColor: Colors.white,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ScaleTransition(
+            scale: animation,
+            child: Center(
               child: Container(
                 margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
                 padding: EdgeInsets.zero,
@@ -52,27 +49,47 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: HeadLineText(
-                text: 'Restaurant',
-                textColor: AppColors.mainColor,
-                textSize: 40,
-                textWeight: FontWeight.w800,
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: HeadLineText(
+              text: 'Restaurant',
+              textColor: AppColors.mainColor,
+              textSize: 40,
+              textWeight: FontWeight.w800,
             ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
       ),
     );
   }
 
-  /*  @override
+  void navigateToDashboard() {
+    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      Get.offNamed(RoutesHelper.dashboardScreen);
+      timer.cancel();
+    });
+  }
+
+  void initAnim() {
+    _animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2))
+          ..forward();
+    animation =
+        CurvedAnimation(parent: _animationController, curve: Curves.linear);
+  }
+
+  loadResources() async {
+    await Get.find<PopularMealsController>().getPopularMealsList();
+    await Get.find<RecommendedMealsController>().getRecommendedMealsList();
+  }
+
+  @override
   void dispose() {
     super.dispose();
     timer.cancel();
-  } */
+  }
 }
