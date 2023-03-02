@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      Get.toNamed(RoutesHelper.mainHomeRoute);
+      Get.toNamed(RoutesHelper.dashboardScreen);
       timer.cancel();
     });
   }
