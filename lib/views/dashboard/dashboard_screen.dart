@@ -1,3 +1,4 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:em_store/core/utils/colors.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  int _selectedPage = 0;
+  int _currentPage = 0;
   final List pages = [
     const MainHomePage(),
     Container(
@@ -28,30 +29,55 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_selectedPage],
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: AppColors.mainColor,
-          unselectedItemColor: AppColors.mainGreyColor,
-          currentIndex: _selectedPage,
-          onTap: (value) {
-            onTapNavClicked(value);
-          },
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined), label: "home"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.history_rounded), label: "history"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart_rounded), label: "cart"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_2_rounded), label: "profile")
-          ]),
+      body: pages[_currentPage],
+      bottomNavigationBar: BottomNavyBar(
+          selectedIndex: _currentPage,
+          showElevation: true,
+          itemCornerRadius: 24,
+          curve: Curves.easeIn,
+          onItemSelected: (index) => onTapNavClicked(index),
+          items: buildBottomNavBarItems()),
     );
   }
 
   void onTapNavClicked(int index) {
     setState(() {
-      _selectedPage = index;
+      _currentPage = index;
     });
+  }
+
+  buildBottomNavBarItems() {
+    return <BottomNavyBarItem>[
+      BottomNavyBarItem(
+        icon: const Icon(Icons.home_rounded),
+        title: const Text('Home'),
+        activeColor: AppColors.mainColor,
+        inactiveColor: AppColors.mainGreyColor,
+        textAlign: TextAlign.center,
+      ),
+      BottomNavyBarItem(
+        icon: const Icon(Icons.history_rounded),
+        title: const Text('History'),
+        activeColor: AppColors.mainColor,
+        textAlign: TextAlign.center,
+        inactiveColor: AppColors.mainGreyColor,
+      ),
+      BottomNavyBarItem(
+        icon: const Icon(Icons.shopping_cart_rounded),
+        title: const Text(
+          'Cart',
+        ),
+        activeColor: AppColors.mainColor,
+        inactiveColor: AppColors.mainGreyColor,
+        textAlign: TextAlign.center,
+      ),
+      BottomNavyBarItem(
+        icon: const Icon(Icons.person_rounded),
+        title: const Text('Profile'),
+        activeColor: AppColors.mainColor,
+        inactiveColor: AppColors.mainGreyColor,
+        textAlign: TextAlign.center,
+      ),
+    ];
   }
 }
