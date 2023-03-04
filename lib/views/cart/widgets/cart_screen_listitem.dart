@@ -1,6 +1,6 @@
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/data/models/meals_model.dart';
-import 'package:em_store/views/widgets/small_body_text.dart';
+import 'package:em_store/core/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -11,8 +11,8 @@ import '../../../core/utils/app_constant.dart';
 import '../../../core/utils/colors.dart';
 import '../../../core/utils/dimensions.dart';
 import '../../../data/models/cart_model.dart';
-import '../../widgets/custom_image_box.dart';
-import '../../widgets/head_text.dart';
+import '../../../core/widgets/custom_image_box.dart';
+import '../../../core/widgets/head_text.dart';
 
 class CartScreenListItem extends StatelessWidget {
   final CartModel cartModel;

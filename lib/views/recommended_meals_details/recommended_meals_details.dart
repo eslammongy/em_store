@@ -4,16 +4,16 @@ import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:em_store/core/utils/colors.dart';
 import 'package:em_store/core/utils/dimensions.dart';
-import 'package:em_store/views/widgets/app_icons.dart';
-import 'package:em_store/views/widgets/expanded_text.dart';
-import 'package:em_store/views/widgets/head_text.dart';
+import 'package:em_store/core/widgets/app_icons.dart';
+import 'package:em_store/core/widgets/expanded_text.dart';
+import 'package:em_store/core/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/cart_controller.dart';
 import '../../core/helper/helper_fun.dart';
 import '../../core/utils/app_constant.dart';
-import '../widgets/custom_circlur_progress.dart';
+import '../../core/widgets/custom_circlur_progress.dart';
 
 class RecommendedMealsDetails extends StatelessWidget {
   final int mealId;

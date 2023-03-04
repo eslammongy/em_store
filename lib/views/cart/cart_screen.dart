@@ -1,6 +1,6 @@
 import 'package:em_store/controllers/cart_controller.dart';
 import 'package:em_store/core/utils/dimensions.dart';
-import 'package:em_store/views/widgets/app_icons.dart';
+import 'package:em_store/core/widgets/app_icons.dart';
 import 'package:em_store/views/cart/widgets/cart_screen_listitem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import '../../controllers/popular_meals_controller.dart';
 import '../../core/helper/routes_helper.dart';
 import '../../core/utils/colors.dart';
-import '../widgets/head_text.dart';
+import '../../core/widgets/head_text.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});

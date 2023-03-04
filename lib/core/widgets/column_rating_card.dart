@@ -1,8 +1,8 @@
-import 'package:em_store/views/widgets/small_body_text.dart';
+import 'package:em_store/core/widgets/small_body_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/colors.dart';
-import '../../core/utils/dimensions.dart';
+import '../utils/colors.dart';
+import '../utils/dimensions.dart';
 import 'head_text.dart';
 import 'icon_and_text_widget.dart';
 

@@ -4,7 +4,7 @@ import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
 import 'package:em_store/core/utils/colors.dart';
-import 'package:em_store/views/widgets/head_text.dart';
+import 'package:em_store/core/widgets/head_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

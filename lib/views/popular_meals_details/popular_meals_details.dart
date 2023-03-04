@@ -10,13 +10,13 @@ import 'package:get/get.dart';
 import 'package:em_store/core/utils/colors.dart';
 import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/views/home/main_home_page.dart';
-import 'package:em_store/views/widgets/app_icons.dart';
-import 'package:em_store/views/widgets/column_rating_card.dart';
-import 'package:em_store/views/widgets/expanded_text.dart';
+import 'package:em_store/core/widgets/app_icons.dart';
+import 'package:em_store/core/widgets/column_rating_card.dart';
+import 'package:em_store/core/widgets/expanded_text.dart';
 
 import '../../core/utils/app_constant.dart';
-import '../widgets/custom_circlur_progress.dart';
-import '../widgets/head_text.dart';
+import '../../core/widgets/custom_circlur_progress.dart';
+import '../../core/widgets/head_text.dart';
 
 class PopularMealsDetails extends StatelessWidget {
   final int mealId;
