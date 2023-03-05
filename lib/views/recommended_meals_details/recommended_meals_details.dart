@@ -7,6 +7,7 @@ import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/core/widgets/app_icons.dart';
 import 'package:em_store/core/widgets/expanded_text.dart';
 import 'package:em_store/core/widgets/head_text.dart';
+import 'package:em_store/views/recommended_meals_details/widgets/meal_info_top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,11 +15,13 @@ import '../../controllers/cart_controller.dart';
 import '../../core/helper/helper_fun.dart';
 import '../../core/utils/app_constant.dart';
 import '../../core/widgets/custom_circlur_progress.dart';
+import 'widgets/recomend_meal_bottom_nav_bar.dart';
 
 class RecommendedMealsDetails extends StatelessWidget {
   final int mealId;
   final String pageName;
-  const RecommendedMealsDetails({super.key, required this.mealId, required this.pageName});
+  const RecommendedMealsDetails(
+      {super.key, required this.mealId, required this.pageName});
 
   @override
   Widget build(BuildContext context) {
@@ -49,47 +52,7 @@ class RecommendedMealsDetails extends StatelessWidget {
                         iconData: Icons.clear,
                       ),
                     ),
-                    GetBuilder<PopularMealsController>(builder: (controller) {
-                      return GestureDetector(
-                        onTap: () {
-                          if (controller.totalCartItems >= 1) {
-                            Get.toNamed(RoutesHelper.cartScreen);
-                          } else {
-                            displaySnackBarCart("Cart Info",
-                                "Your cart is empty, please add first.");
-                          }
-                        },
-                        child: Stack(children: [
-                          const AppIcons(
-                              iconData: Icons.shopping_cart_outlined),
-                          Get.find<PopularMealsController>().totalCartItems >= 1
-                              ? const Positioned(
-                                  right: 0,
-                                  top: 0,
-                                  child: AppIcons(
-                                    iconData: Icons.circle,
-                                    size: 20,
-                                    iconColor: Colors.transparent,
-                                    iconBackground: AppColors.mainColor,
-                                  ),
-                                )
-                              : Container(),
-                          Get.find<PopularMealsController>().totalCartItems >= 1
-                              ? Positioned(
-                                  right: 5,
-                                  top: 2,
-                                  child: Text(
-                                    "${Get.find<PopularMealsController>().totalCartItems}",
-                                    style: const TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.iconsBkColor),
-                                  ),
-                                )
-                              : Container()
-                        ]),
-                      );
-                    })
+                    const MealInfoTopBar(),
                   ]),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(40),
@@ -112,7 +75,7 @@ class RecommendedMealsDetails extends StatelessWidget {
                   ),
                 ),
               ),
-              backgroundColor: const Color.fromARGB(255, 249, 161, 9),
+              backgroundColor: Colors.white,
               flexibleSpace: FlexibleSpaceBar(
                 background: CachedNetworkImage(
                   width: double.infinity,
@@ -145,102 +108,10 @@ class RecommendedMealsDetails extends StatelessWidget {
         ),
         bottomNavigationBar:
             GetBuilder<PopularMealsController>(builder: (controller) {
-          return Column(mainAxisSize: MainAxisSize.min, children: [
-            Container(
-              padding: EdgeInsets.only(
-                  left: Dimensions.spaceWidth10,
-                  right: Dimensions.spaceWidth10,
-                  top: Dimensions.spaceHeight10,
-                  bottom: Dimensions.spaceHeight10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      controller.setQuantity(false);
-                    },
-                    child: AppIcons(
-                      iconData: Icons.remove,
-                      iconBackground: AppColors.mainColor,
-                      iconColor: Colors.white,
-                      iconSize: Dimensions.iconsSize,
-                    ),
-                  ),
-                  SizedBox(
-                    width: Dimensions.spaceWidth10 / 2,
-                  ),
-                  HeadLineText(
-                    text: "\$${selectedMeal.price} * ${controller.inCartItems}",
-                    textColor: AppColors.mainBlackColor,
-                    textSize: Dimensions.headFontSize26,
-                  ),
-                  SizedBox(
-                    width: Dimensions.spaceWidth10 / 2,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      controller.setQuantity(true);
-                    },
-                    child: AppIcons(
-                      iconData: Icons.add,
-                      iconBackground: AppColors.mainColor,
-                      iconColor: Colors.white,
-                      iconSize: Dimensions.iconsSize,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: Dimensions.bottomBarHeight,
-              padding: EdgeInsets.only(
-                  top: Dimensions.spaceHeight30,
-                  bottom: Dimensions.spaceHeight30,
-                  left: Dimensions.spaceWidth20,
-                  right: Dimensions.spaceWidth20),
-              margin: EdgeInsets.only(
-                  bottom: Dimensions.spaceHeight10,
-                  left: Dimensions.spaceWidth10,
-                  right: Dimensions.spaceWidth10),
-              decoration: BoxDecoration(
-                  color: AppColors.iconsBkColor,
-                  borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        padding: EdgeInsets.all(Dimensions.spaceHeight10),
-                        decoration: BoxDecoration(
-                            color: AppColors.buttonBGColor,
-                            borderRadius:
-                                BorderRadius.circular(Dimensions.cardRadius20)),
-                        child: const Icon(
-                          Icons.favorite,
-                          color: AppColors.mainColor,
-                        )),
-                    GestureDetector(
-                      onTap: () {
-                        controller.addInCart(selectedMeal);
-                      },
-                      child: Container(
-                        padding: EdgeInsets.only(
-                            top: Dimensions.spaceHeight15,
-                            bottom: Dimensions.spaceHeight15,
-                            left: Dimensions.spaceWidth20,
-                            right: Dimensions.spaceWidth20),
-                        decoration: BoxDecoration(
-                            color: AppColors.mainColor,
-                            borderRadius:
-                                BorderRadius.circular(Dimensions.cardRadius20)),
-                        child: HeadLineText(
-                          text: "\$${selectedMeal.price} | Add To Cart",
-                          textColor: Colors.white,
-                        ),
-                      ),
-                    )
-                  ]),
-            ),
-          ]);
+          return RecommendMealBottomNavBar(
+            controller: controller,
+            selectedMeal: selectedMeal,
+          );
         }));
   }
 }

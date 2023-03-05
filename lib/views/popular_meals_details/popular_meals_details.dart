@@ -57,12 +57,12 @@ class PopularMealsDetails extends StatelessWidget {
                 ),
               )),
           Positioned(
-              top: Dimensions.spaceHeight50,
+              top: Dimensions.spaceHeight30,
               left: Dimensions.spaceWidth20,
               right: Dimensions.spaceWidth20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+                children: [
                   GestureDetector(
                       onTap: () {
                         if (pageName == "CartPage") {
@@ -246,5 +246,4 @@ class PopularMealsDetails extends StatelessWidget {
       ),
     );
   }
-
 }

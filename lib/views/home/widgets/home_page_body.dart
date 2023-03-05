@@ -1,4 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:em_store/views/home/widgets/stack_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,6 +48,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         // top slider section
         GetBuilder<PopularMealsController>(builder: (popularProducts) {
@@ -110,8 +112,8 @@ class _HomePageBodyState extends State<HomePageBody> {
             builder: ((recommendedController) {
           return recommendedController.isLoaded
               ? ListView.builder(
-                  shrinkWrap: true,
                   padding: const EdgeInsets.only(top: 20),
+                  shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount:
                       recommendedController.recommendedProductsList.length,

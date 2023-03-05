@@ -32,24 +32,31 @@ class RecommendedMealsItem extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(
-            left: Dimensions.spaceWidth20,
-            right: Dimensions.spaceWidth20,
-            bottom: Dimensions.spaceHeight10),
+          left: Dimensions.spaceWidth20,
+          right: Dimensions.spaceWidth20,
+          bottom: Dimensions.spaceHeight10,
+        ),
         child: Row(
           children: [
             Container(
               width: Dimensions.listViewImgSize + 10,
               height: Dimensions.listViewImgSize + 10,
-              decoration: const BoxDecoration(
-                boxShadow: [
+              decoration: BoxDecoration(
+                color: AppColors.iconsBkColor,
+                borderRadius: BorderRadius.circular(90),
+                boxShadow: const [
                   BoxShadow(
-                      color: Color(0xFFe8e8e8),
+                      color: Color(0xFFCCCCCC),
                       offset: Offset(0, 10),
                       blurRadius: 10),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(5, 0),
+                  )
                 ],
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(100),
                 child: CachedNetworkImage(
                   imageUrl: "${AppConstant.BASE_URL}uploads/${mealModel.img!}",
                   fit: BoxFit.fill,
@@ -64,14 +71,13 @@ class RecommendedMealsItem extends StatelessWidget {
             Expanded(
               child: Container(
                 height: Dimensions.listViewImgSize,
+               // margin: EdgeInsets.only(left: -10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(Dimensions.cardRadius20),
-                      bottomRight: Radius.circular(Dimensions.cardRadius20)),
+                  borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
                   boxShadow: const [
                     BoxShadow(
-                        color: Color(0xFFe8e8e8),
+                        color: Color(0xFFCCCCCC),
                         offset: Offset(0, 10),
                         blurRadius: 10),
                     BoxShadow(
