@@ -126,17 +126,17 @@ class PopularMealsDetails extends StatelessWidget {
                       right: Dimensions.spaceWidth20,
                       top: Dimensions.spaceWidth20),
                   decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color(0xC3CDCDCD),
-                          blurRadius: 10,
-                          spreadRadius: 2,
-                        )
-                      ],
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(Dimensions.cardRadius20),
-                          topRight: Radius.circular(Dimensions.cardRadius20)),
-                      color: Colors.white),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xC3CDCDCD),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                      )
+                    ],
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(Dimensions.cardRadius20),
+                        topRight: Radius.circular(Dimensions.cardRadius20)),
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

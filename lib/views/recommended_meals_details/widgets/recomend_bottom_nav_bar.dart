@@ -17,11 +17,10 @@ class RecommendMealBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(mainAxisSize: MainAxisSize.min, children: [
       Container(
-        padding: EdgeInsets.only(
-            left: Dimensions.spaceWidth10,
-            right: Dimensions.spaceWidth10,
-            top: Dimensions.spaceHeight10,
-            bottom: Dimensions.spaceHeight10),
+        padding: EdgeInsets.symmetric(
+          horizontal: Dimensions.spaceWidth10,
+          vertical: Dimensions.spaceWidth10,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -63,17 +62,26 @@ class RecommendMealBottomNavBar extends StatelessWidget {
       ),
       Container(
         height: Dimensions.bottomBarHeight,
-        padding: EdgeInsets.only(
-            top: Dimensions.spaceHeight30,
-            bottom: Dimensions.spaceHeight30,
-            left: Dimensions.spaceWidth20,
-            right: Dimensions.spaceWidth20),
-        margin: EdgeInsets.only(
-            bottom: Dimensions.spaceHeight10,
-            left: Dimensions.spaceWidth10,
-            right: Dimensions.spaceWidth10),
+        padding: EdgeInsets.symmetric(
+          vertical: Dimensions.spaceHeight30,
+          horizontal: Dimensions.spaceWidth20,
+        ),
+        margin: EdgeInsets.symmetric(
+          vertical: Dimensions.spaceHeight15,
+          horizontal: Dimensions.spaceHeight20,
+        ),
         decoration: BoxDecoration(
-            color: Color(0xFFF0F0F0),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                  color: Color(0xFFCCCCCC),
+                  offset: Offset(0, 10),
+                  blurRadius: 10),
+              BoxShadow(
+                color: Colors.white,
+                offset: Offset(10, 0),
+              )
+            ],
             borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

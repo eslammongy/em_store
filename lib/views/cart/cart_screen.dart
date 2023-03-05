@@ -52,7 +52,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed(RoutesHelper.mainHomeRoute);
+                        Get.toNamed(RoutesHelper.dashboardScreen);
                       },
                       child: const AppIcons(
                         iconData: Icons.home,
