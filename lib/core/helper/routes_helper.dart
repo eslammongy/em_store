@@ -3,8 +3,8 @@ import 'package:em_store/views/home/main_home_page.dart';
 import 'package:em_store/views/splash/splash_screen.dart';
 import 'package:get/get.dart';
 import '../../views/cart/cart_screen.dart';
-import '../../views/popular_meals_details/popular_meals_details.dart';
-import '../../views/recommended_meals_details/recommended_meals_details.dart';
+import '../../views/popular_meals/popular_meals_details.dart';
+import '../../views/recommended_meals/recommended_meals_details.dart';
 
 class RoutesHelper {
   static const String initialRoute = "/";

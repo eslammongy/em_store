@@ -7,7 +7,7 @@ import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/core/widgets/app_icons.dart';
 import 'package:em_store/core/widgets/expanded_text.dart';
 import 'package:em_store/core/widgets/head_text.dart';
-import 'package:em_store/views/recommended_meals_details/widgets/recommended_app_bar.dart';
+import 'package:em_store/views/recommended_meals/widgets/recommended_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
