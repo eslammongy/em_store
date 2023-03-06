@@ -37,17 +37,20 @@ class RecommendedMealsDetails extends StatelessWidget {
               pinned: true,
               automaticallyImplyLeading: false,
               toolbarHeight: 70,
-              title: RecommendedDetailsTopBar(pageName: pageName,),
+              title: RecommendedDetailsTopBar(
+                pageName: pageName,
+              ),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(40),
                 child: Container(
                   width: double.maxFinite,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding:
+                      EdgeInsets.symmetric(vertical: Dimensions.spaceHeight15),
                   decoration: BoxDecoration(
-                    color: AppColors.buttonBGColor,
+                    color: AppColors.mainLightColor,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(Dimensions.cardRadius20),
-                        topRight: Radius.circular(Dimensions.cardRadius20)),
+                        topLeft: Radius.circular(Dimensions.cardRadius30),
+                        topRight: Radius.circular(Dimensions.cardRadius30)),
                   ),
                   child: Center(
                     child: HeadLineText(
@@ -77,6 +80,7 @@ class RecommendedMealsDetails extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
+                    color: AppColors.mainLightColor,
                     margin: EdgeInsets.only(
                       left: Dimensions.spaceWidth10,
                       right: Dimensions.spaceWidth10,

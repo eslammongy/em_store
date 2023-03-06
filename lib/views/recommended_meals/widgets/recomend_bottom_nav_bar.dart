@@ -75,11 +75,11 @@ class RecommendMealBottomNavBar extends StatelessWidget {
             boxShadow: const [
               BoxShadow(
                   color: Color(0xFFCCCCCC),
-                  offset: Offset(0, 10),
-                  blurRadius: 10),
+                  offset: Offset(5, 10),
+                  blurRadius: 15),
               BoxShadow(
                 color: AppColors.mainLightColor,
-                offset: Offset(10, 0),
+                offset: Offset(0, 0),
               )
             ],
             borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
@@ -89,10 +89,20 @@ class RecommendMealBottomNavBar extends StatelessWidget {
               padding: EdgeInsets.all(Dimensions.spaceHeight10),
               decoration: BoxDecoration(
                   color: AppColors.buttonBGColor,
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color(0xFFCCCCCC),
+                        offset: Offset(0, 5),
+                        blurRadius: 15),
+                    BoxShadow(
+                      color: AppColors.mainLightColor,
+                      offset: Offset(0, 0),
+                    )
+                  ],
                   borderRadius:
                       BorderRadius.circular(Dimensions.cardRadius20 * 2)),
               child: const Icon(
-                Icons.favorite,
+                Icons.favorite_border_rounded,
                 color: AppColors.mainOrangeColor,
               )),
           GestureDetector(

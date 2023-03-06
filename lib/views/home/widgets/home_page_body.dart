@@ -103,7 +103,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             SizedBox(
               width: Dimensions.spaceWidth10,
             ),
-            SmallBodyText(text: 'popular meals here..')
+            SmallBodyText(text: 'Recommended meals here..')
           ]),
         ),
         // list of products here
