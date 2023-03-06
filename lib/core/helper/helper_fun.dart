@@ -7,6 +7,6 @@ import '../utils/colors.dart';
 void displaySnackBarCart(String title, String msg) {
   Get.snackbar(title, msg,
       backgroundColor: AppColors.mainOrangeColor,
-      colorText: Colors.white,
+      colorText: AppColors.mainLightColor,
       icon: const Icon(Icons.info_outline_rounded));
 }

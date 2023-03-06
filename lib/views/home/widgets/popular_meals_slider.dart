@@ -1,6 +1,7 @@
 // creating slider container
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
+import 'package:em_store/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -51,18 +52,18 @@ Widget buildPopularSlider(int index, MealModel mealModel, Matrix4 matrix4) {
                   bottom: Dimensions.spaceWidth10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
-                  color: Colors.white,
+                  color: AppColors.mainLightColor,
                   boxShadow: const [
                     BoxShadow(
                         color: Color(0xFFe8e8e8),
                         offset: Offset(0, 5),
                         blurRadius: 5.0),
                     BoxShadow(
-                      color: Colors.white,
+                      color: AppColors.mainLightColor,
                       offset: Offset(-5, 0),
                     ),
                     BoxShadow(
-                      color: Colors.white,
+                      color: AppColors.mainLightColor,
                       offset: Offset(5, 0),
                     )
                   ]),

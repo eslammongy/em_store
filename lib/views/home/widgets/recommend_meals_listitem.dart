@@ -44,13 +44,14 @@ class RecommendedMealsItem extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.iconsBkColor,
                 borderRadius: BorderRadius.circular(90),
+                border: Border.all(width: 1.2, color: AppColors.mainLightColor),
                 boxShadow: const [
                   BoxShadow(
                       color: Color(0xFFCCCCCC),
                       offset: Offset(0, 10),
                       blurRadius: 10),
                   BoxShadow(
-                    color: Colors.white,
+                    color: AppColors.mainLightColor,
                     offset: Offset(5, 0),
                   )
                 ],
@@ -73,7 +74,7 @@ class RecommendedMealsItem extends StatelessWidget {
                 height: Dimensions.listViewImgSize,
                 // margin: EdgeInsets.only(left: -10),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.mainLightColor,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(Dimensions.cardRadius15),
                       bottomRight: Radius.circular(Dimensions.cardRadius15)),
@@ -83,7 +84,7 @@ class RecommendedMealsItem extends StatelessWidget {
                         offset: Offset(0, 10),
                         blurRadius: 10),
                     BoxShadow(
-                      color: Colors.white,
+                      color: AppColors.mainLightColor,
                       offset: Offset(5, 0),
                     )
                   ],

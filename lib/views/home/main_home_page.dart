@@ -55,7 +55,8 @@ class _MainHomePageState extends State<MainHomePage> {
                   height: Dimensions.spaceHeight50,
                   padding: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                    border: Border.all(width: 1.0, color: Colors.white),
+                    border:
+                        Border.all(width: 1.0, color: AppColors.mainLightColor),
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius30),
                     color: AppColors.mainOrangeColor,
@@ -65,7 +66,7 @@ class _MainHomePageState extends State<MainHomePage> {
                           offset: Offset(5, 10),
                           blurRadius: 10),
                       BoxShadow(
-                        color: Colors.white,
+                        color: AppColors.mainLightColor,
                         offset: Offset(0, 0),
                       )
                     ],
@@ -73,7 +74,7 @@ class _MainHomePageState extends State<MainHomePage> {
                   child: Icon(
                     Icons.search,
                     size: Dimensions.iconsSize + 5,
-                    color: Colors.white,
+                    color: AppColors.mainLightColor,
                   ),
                 ),
               )

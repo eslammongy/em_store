@@ -134,7 +134,7 @@ class _CartScreenState extends State<CartScreen> {
                       },
                       child: HeadLineText(
                         text: "Checkout",
-                        textColor: Colors.white,
+                        textColor: AppColors.mainLightColor,
                       ),
                     ),
                   )

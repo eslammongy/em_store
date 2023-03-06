@@ -31,7 +31,7 @@ class RecommendMealBottomNavBar extends StatelessWidget {
               child: AppIcons(
                 iconData: Icons.remove,
                 iconBackground: AppColors.mainOrangeColor,
-                iconColor: Colors.white,
+                iconColor: AppColors.mainLightColor,
                 iconSize: Dimensions.iconsSize,
               ),
             ),
@@ -53,7 +53,7 @@ class RecommendMealBottomNavBar extends StatelessWidget {
               child: AppIcons(
                 iconData: Icons.add,
                 iconBackground: AppColors.mainOrangeColor,
-                iconColor: Colors.white,
+                iconColor: AppColors.mainLightColor,
                 iconSize: Dimensions.iconsSize,
               ),
             )
@@ -71,14 +71,14 @@ class RecommendMealBottomNavBar extends StatelessWidget {
           horizontal: Dimensions.spaceHeight20,
         ),
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.mainLightColor,
             boxShadow: const [
               BoxShadow(
                   color: Color(0xFFCCCCCC),
                   offset: Offset(0, 10),
                   blurRadius: 10),
               BoxShadow(
-                color: Colors.white,
+                color: AppColors.mainLightColor,
                 offset: Offset(10, 0),
               )
             ],
@@ -110,7 +110,7 @@ class RecommendMealBottomNavBar extends StatelessWidget {
                   borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
               child: HeadLineText(
                 text: "\$${selectedMeal.price} | Add To Cart",
-                textColor: Colors.white,
+                textColor: AppColors.mainLightColor,
               ),
             ),
           )

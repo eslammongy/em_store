@@ -35,7 +35,7 @@ class PopularMealsDetails extends StatelessWidget {
         .initMealsItems(selectedMeal, Get.find<CartController>());
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.mainLightColor,
       body: Stack(
         children: [
           Positioned(
@@ -229,7 +229,7 @@ class PopularMealsDetails extends StatelessWidget {
                       },
                       child: HeadLineText(
                         text: "\$${selectedMeal.price} - Add To Cart",
-                        textColor: Colors.white,
+                        textColor: AppColors.mainLightColor,
                       ),
                     ),
                   )

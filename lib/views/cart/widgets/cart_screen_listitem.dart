@@ -24,7 +24,7 @@ class CartScreenListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.mainLightColor,
         borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
         boxShadow: const [
           BoxShadow(
