@@ -33,7 +33,17 @@ class _CartScreenState extends State<CartScreen> {
                     vertical: Dimensions.spaceHeight10,
                     horizontal: Dimensions.spaceHeight10),
                 decoration: BoxDecoration(
-                    color: AppColors.iconsBkColor,
+                    color: AppColors.buttonBGColor,
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Color(0xFFCCCCCC),
+                          offset: Offset(5, 10),
+                          blurRadius: 15),
+                      BoxShadow(
+                        color: AppColors.mainLightColor,
+                        offset: Offset(0, 0),
+                      )
+                    ],
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius20)),
                 child: Row(
@@ -106,8 +116,18 @@ class _CartScreenState extends State<CartScreen> {
               horizontal: Dimensions.spaceWidth20,
             ),
             decoration: BoxDecoration(
-                color: AppColors.iconsBkColor,
-                borderRadius: BorderRadius.circular(Dimensions.cardRadius30)),
+                color: AppColors.buttonBGColor,
+                boxShadow: const [
+                  BoxShadow(
+                      color: Color(0xFFCCCCCC),
+                      offset: Offset(0, 0),
+                      blurRadius: 15),
+                  BoxShadow(
+                    color: AppColors.mainLightColor,
+                    offset: Offset(0, 0),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(Dimensions.cardRadius20)),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -115,8 +135,18 @@ class _CartScreenState extends State<CartScreen> {
                     padding: EdgeInsets.all(Dimensions.spaceWidth20),
                     decoration: BoxDecoration(
                         color: AppColors.buttonBGColor,
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color(0xFFCCCCCC),
+                              offset: Offset(0, 10),
+                              blurRadius: 15),
+                          BoxShadow(
+                            color: AppColors.mainLightColor,
+                            offset: Offset(0, 0),
+                          )
+                        ],
                         borderRadius:
-                            BorderRadius.circular(Dimensions.cardRadius30)),
+                            BorderRadius.circular(Dimensions.cardRadius20)),
                     child:
                         HeadLineText(text: "\$ ${controller.calcTotalAmount}"),
                   ),

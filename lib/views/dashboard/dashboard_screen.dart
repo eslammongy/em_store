@@ -1,4 +1,5 @@
 import 'package:em_store/core/utils/colors.dart';
+import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/views/dashboard/widgets/bottom_nav_bar_items.dart';
 import 'package:em_store/views/home/main_home_page.dart';
 import 'package:flutter/material.dart';
@@ -28,14 +29,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: pages[_selectedPage],
-        bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: AppColors.mainOrangeColor,
-            unselectedItemColor: AppColors.mainGreyColor,
-            currentIndex: _selectedPage,
-            onTap: (value) {
-              onTapNavClicked(value);
-            },
-            items: buildBottomNavBarItems()));
+        bottomNavigationBar: SizedBox(
+          height: 70,
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.cardRadius20),
+                topRight: Radius.circular(Dimensions.cardRadius20)),
+            child: BottomNavigationBar(
+                type: BottomNavigationBarType.shifting,
+                selectedItemColor: AppColors.mainOrangeColor,
+                unselectedItemColor: AppColors.mainGreyColor,
+                currentIndex: _selectedPage,
+                elevation: 15.0,
+                backgroundColor: AppColors.mainLightColor,
+                onTap: (value) {
+                  onTapNavClicked(value);
+                },
+                items: buildBottomNavBarItems()),
+          ),
+        ));
   }
 
   void onTapNavClicked(int index) {

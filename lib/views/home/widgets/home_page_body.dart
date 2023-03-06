@@ -1,8 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:em_store/views/home/widgets/stack_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:em_store/controllers/popular_meals_controller.dart';
 import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/core/utils/colors.dart';
