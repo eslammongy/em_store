@@ -39,12 +39,11 @@ class RecommendedMealsItem extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: Dimensions.listViewImgSize + 10,
-              height: Dimensions.listViewImgSize + 10,
+              width: Dimensions.listViewImgSize + 5,
+              height: Dimensions.listViewImgSize + 5,
               decoration: BoxDecoration(
                 color: AppColors.iconsBkColor,
                 borderRadius: BorderRadius.circular(90),
-                border: Border.all(width: 1.2, color: AppColors.mainLightColor),
                 boxShadow: const [
                   BoxShadow(
                       color: Color(0xFFCCCCCC),
@@ -57,7 +56,9 @@ class RecommendedMealsItem extends StatelessWidget {
                 ],
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(Dimensions.cardRadius20),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(Dimensions.cardRadius15),
+                    bottomLeft: Radius.circular(Dimensions.cardRadius15)),
                 child: CachedNetworkImage(
                   imageUrl: "${AppConstant.BASE_URL}uploads/${mealModel.img!}",
                   fit: BoxFit.fill,
@@ -71,8 +72,7 @@ class RecommendedMealsItem extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                height: Dimensions.listViewImgSize,
-                // margin: EdgeInsets.only(left: -10),
+                height: Dimensions.listViewImgSize + 5,
                 decoration: BoxDecoration(
                   color: AppColors.mainLightColor,
                   borderRadius: BorderRadius.only(

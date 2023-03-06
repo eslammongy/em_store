@@ -37,7 +37,7 @@ class RecommendedMealsDetails extends StatelessWidget {
               pinned: true,
               automaticallyImplyLeading: false,
               toolbarHeight: 70,
-              title: RecommendedDetailsTopBar(
+              title: RecommendedDetailsAppBar(
                 pageName: pageName,
               ),
               bottom: PreferredSize(

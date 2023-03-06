@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/popular_meals_controller.dart';
 
-class RecommendedDetailsTopBar extends StatelessWidget {
-  const RecommendedDetailsTopBar({super.key, required this.pageName});
+class RecommendedDetailsAppBar extends StatelessWidget {
+  const RecommendedDetailsAppBar({super.key, required this.pageName});
   final String pageName;
 
   @override
