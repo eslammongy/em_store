@@ -75,7 +75,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                   : popularProducts.popularProductsList.length,
               position: _currentPageValue,
               decorator: DotsDecorator(
-                activeColor: AppColors.mainColor,
+                activeColor: AppColors.mainOrangeColor,
                 size: const Size.square(9.0),
                 activeSize: const Size(18.0, 9.0),
                 activeShape: RoundedRectangleBorder(

@@ -111,7 +111,7 @@ class RecommendedMealsItem extends StatelessWidget {
                           children: const [
                             IconAndTextWidget(
                                 icon: Icons.circle,
-                                color: AppColors.mainColor,
+                                color: AppColors.mainOrangeColor,
                                 text: 'normal'),
                             IconAndTextWidget(
                                 icon: Icons.location_on,
@@ -119,7 +119,7 @@ class RecommendedMealsItem extends StatelessWidget {
                                 text: '36.6km'),
                             IconAndTextWidget(
                                 icon: Icons.alarm_rounded,
-                                color: AppColors.mainColor,
+                                color: AppColors.mainOrangeColor,
                                 text: '24min'),
                           ],
                         )

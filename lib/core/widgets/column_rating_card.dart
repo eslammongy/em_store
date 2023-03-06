@@ -32,7 +32,7 @@ class ReusableColumnCard extends StatelessWidget {
                 5,
                 (index) => const Icon(
                       Icons.star,
-                      color: AppColors.mainColor,
+                      color: AppColors.mainOrangeColor,
                       size: 15,
                     )),
           ),
@@ -51,12 +51,14 @@ class ReusableColumnCard extends StatelessWidget {
       ),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const [
         IconAndTextWidget(
-            icon: Icons.circle, color: AppColors.mainColor, text: 'normal'),
+            icon: Icons.circle,
+            color: AppColors.mainOrangeColor,
+            text: 'normal'),
         IconAndTextWidget(
             icon: Icons.location_on, color: Colors.green, text: '36.6km'),
         IconAndTextWidget(
             icon: Icons.alarm_rounded,
-            color: AppColors.mainColor,
+            color: AppColors.mainOrangeColor,
             text: '24min'),
       ])
     ]);

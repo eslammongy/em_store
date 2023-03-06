@@ -19,10 +19,12 @@ class _MainHomePageState extends State<MainHomePage> {
         body: Column(
       children: [
         Container(
+          width: double.infinity,
           margin: EdgeInsets.only(
-              top: Dimensions.spaceHeight50, bottom: Dimensions.spaceHeight15),
-          padding: EdgeInsets.only(
-              left: Dimensions.spaceWidth20, right: Dimensions.spaceWidth20),
+              top: Dimensions.spaceHeight30, bottom: Dimensions.spaceHeight15),
+          padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.spaceHeight20,
+              vertical: Dimensions.spaceHeight10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -30,7 +32,7 @@ class _MainHomePageState extends State<MainHomePage> {
                 children: [
                   HeadLineText(
                     text: 'Egypt',
-                    textColor: AppColors.mainColor,
+                    textColor: AppColors.mainOrangeColor,
                     textSize: 25,
                   ),
                   Row(
@@ -53,9 +55,20 @@ class _MainHomePageState extends State<MainHomePage> {
                   height: Dimensions.spaceHeight50,
                   padding: EdgeInsets.zero,
                   decoration: BoxDecoration(
+                    border: Border.all(width: 1.0, color: Colors.white),
                     borderRadius:
                         BorderRadius.circular(Dimensions.cardRadius30),
-                    color: AppColors.mainColor,
+                    color: AppColors.mainOrangeColor,
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Color(0xFFBCBCBC),
+                          offset: Offset(5, 10),
+                          blurRadius: 10),
+                      BoxShadow(
+                        color: Colors.white,
+                        offset: Offset(0, 0),
+                      )
+                    ],
                   ),
                   child: Icon(
                     Icons.search,

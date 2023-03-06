@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen>
             padding: const EdgeInsets.only(left: 20),
             child: HeadLineText(
               text: 'Restaurant',
-              textColor: AppColors.mainColor,
+              textColor: AppColors.mainOrangeColor,
               textSize: 40,
               textWeight: FontWeight.w800,
             ),

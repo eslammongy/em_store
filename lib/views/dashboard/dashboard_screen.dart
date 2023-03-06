@@ -29,7 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
         body: pages[_selectedPage],
         bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: AppColors.mainColor,
+            selectedItemColor: AppColors.mainOrangeColor,
             unselectedItemColor: AppColors.mainGreyColor,
             currentIndex: _selectedPage,
             onTap: (value) {

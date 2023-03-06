@@ -47,7 +47,7 @@ class _CartScreenState extends State<CartScreen> {
                         iconData: Icons.arrow_back_ios_new_rounded,
                         iconSize: 22,
                         iconColor: AppColors.buttonBGColor,
-                        iconBackground: AppColors.mainColor,
+                        iconBackground: AppColors.mainOrangeColor,
                       ),
                     ),
                     GestureDetector(
@@ -57,14 +57,14 @@ class _CartScreenState extends State<CartScreen> {
                       child: const AppIcons(
                         iconData: Icons.home,
                         iconColor: AppColors.buttonBGColor,
-                        iconBackground: AppColors.mainColor,
+                        iconBackground: AppColors.mainOrangeColor,
                         iconSize: 22,
                       ),
                     ),
                     const AppIcons(
                       iconData: Icons.shopping_cart,
                       iconColor: AppColors.buttonBGColor,
-                      iconBackground: AppColors.mainColor,
+                      iconBackground: AppColors.mainOrangeColor,
                       iconSize: 22,
                     ),
                   ],
@@ -125,7 +125,7 @@ class _CartScreenState extends State<CartScreen> {
                       Dimensions.spaceHeight20,
                     ),
                     decoration: BoxDecoration(
-                        color: AppColors.mainColor,
+                        color: AppColors.mainOrangeColor,
                         borderRadius:
                             BorderRadius.circular(Dimensions.cardRadius20)),
                     child: GestureDetector(

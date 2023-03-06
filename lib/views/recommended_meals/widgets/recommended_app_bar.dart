@@ -49,7 +49,7 @@ class RecommendedDetailsTopBar extends StatelessWidget {
                       iconData: Icons.circle,
                       size: 20,
                       iconColor: Colors.transparent,
-                      iconBackground: AppColors.mainColor,
+                      iconBackground: AppColors.mainOrangeColor,
                     ),
                   )
                 : Container(),

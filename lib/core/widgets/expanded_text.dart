@@ -65,13 +65,13 @@ class _ExpendableTextWidgetState extends State<ExpendableTextWidget> {
                       SmallBodyText(
                         maxLines: 1,
                         text: hiddenText ? 'Read More..' : 'Show less..',
-                        textColor: AppColors.mainColor,
+                        textColor: AppColors.mainOrangeColor,
                       ),
                       Icon(
                         hiddenText
                             ? Icons.arrow_drop_down
                             : Icons.arrow_drop_up_outlined,
-                        color: AppColors.mainColor,
+                        color: AppColors.mainOrangeColor,
                       )
                     ],
                   ),

@@ -93,7 +93,7 @@ class PopularMealsDetails extends StatelessWidget {
                                   iconData: Icons.circle,
                                   size: 20,
                                   iconColor: Colors.transparent,
-                                  iconBackground: AppColors.mainColor,
+                                  iconBackground: AppColors.mainOrangeColor,
                                 ),
                               )
                             : Container(),
@@ -220,7 +220,7 @@ class PopularMealsDetails extends StatelessWidget {
                         left: Dimensions.spaceWidth20,
                         right: Dimensions.spaceWidth20),
                     decoration: BoxDecoration(
-                        color: AppColors.mainColor,
+                        color: AppColors.mainOrangeColor,
                         borderRadius:
                             BorderRadius.circular(Dimensions.cardRadius20)),
                     child: GestureDetector(
