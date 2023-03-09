@@ -41,7 +41,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 unselectedItemColor: AppColors.mainGreyColor,
                 currentIndex: _selectedPage,
                 elevation: 15.0,
-                backgroundColor: AppColors.mainLightColor,
+                backgroundColor: AppColors.mainGreyColor,
                 onTap: (value) {
                   onTapNavClicked(value);
                 },
