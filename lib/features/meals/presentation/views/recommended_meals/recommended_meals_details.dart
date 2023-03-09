@@ -26,6 +26,7 @@ class RecommendedMealsDetails extends StatelessWidget {
     Get.find<PopularMealsController>()
         .initMealsItems(selectedMeal, Get.find<CartController>());
     return Scaffold(
+        backgroundColor: AppColors.mainLightColor,
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -76,7 +77,6 @@ class RecommendedMealsDetails extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    color: AppColors.mainLightColor,
                     margin: EdgeInsets.only(
                       left: Dimensions.spaceWidth10,
                       right: Dimensions.spaceWidth10,

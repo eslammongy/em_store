@@ -1,4 +1,3 @@
-
 import 'package:em_store/core/utils/colors.dart';
 import 'package:em_store/core/utils/dimensions.dart';
 import 'package:em_store/core/widgets/app_icons.dart';
@@ -71,11 +70,11 @@ class RecommendMealBottomNavBar extends StatelessWidget {
           horizontal: Dimensions.spaceHeight20,
         ),
         decoration: BoxDecoration(
-            color: AppColors.mainLightColor,
+            color: AppColors.buttonBGColor,
             boxShadow: const [
               BoxShadow(
                   color: Color(0xFFCCCCCC),
-                  offset: Offset(5, 10),
+                  offset: Offset(0, 0),
                   blurRadius: 15),
               BoxShadow(
                 color: AppColors.mainLightColor,

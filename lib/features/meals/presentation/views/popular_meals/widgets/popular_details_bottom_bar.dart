@@ -26,9 +26,7 @@ class PopularDetailsBottomBar extends StatelessWidget {
           color: AppColors.mainLightColor,
           boxShadow: const [
             BoxShadow(
-                color: Color(0xFFCCCCCC),
-                offset: Offset(5, 10),
-                blurRadius: 15),
+                color: Color(0xFFCCCCCC), offset: Offset(0, 0), blurRadius: 15),
             BoxShadow(
               color: AppColors.mainLightColor,
               offset: Offset(0, 0),
