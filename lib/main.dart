@@ -1,9 +1,9 @@
-import 'package:em_store/controllers/popular_meals_controller.dart';
-import 'package:em_store/controllers/recommended_meals_controller.dart';
 import 'package:em_store/core/helper/routes_helper.dart';
+import 'package:em_store/features/meals/presentation/controllers/popular_meals_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'core/helper/dependencies.dart' as helper;
+import 'features/meals/presentation/controllers/recommended_meals_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

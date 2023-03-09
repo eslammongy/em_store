@@ -1,10 +1,10 @@
-import 'package:em_store/views/dashboard/dashboard_screen.dart';
-import 'package:em_store/views/home/main_home_page.dart';
-import 'package:em_store/views/splash/splash_screen.dart';
+import 'package:em_store/features/cart/presentation/views/cart_screen.dart';
+import 'package:em_store/features/dashboard/dashboard_screen.dart';
+import 'package:em_store/features/home/main_home_page.dart';
+import 'package:em_store/features/splash/splash_screen.dart';
 import 'package:get/get.dart';
-import '../../views/cart/cart_screen.dart';
-import '../../views/popular_meals/popular_meals_details.dart';
-import '../../views/recommended_meals/recommended_meals_details.dart';
+import '../../features/meals/presentation/views/popular_meals/popular_meals_details.dart';
+import '../../features/meals/presentation/views/recommended_meals/recommended_meals_details.dart';
 
 class RoutesHelper {
   static const String initialRoute = "/";
